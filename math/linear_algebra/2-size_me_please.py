@@ -3,6 +3,7 @@
 
 
 def matrix_shape(matrix):
+    """Calculate shape of matrix"""
     result = []
     while True:
         try:
