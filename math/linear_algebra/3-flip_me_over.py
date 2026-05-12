@@ -8,7 +8,7 @@ def matrix_transpose(matrix):
     result = []
 
     for col in range(len(matrix[0])):
-        new-row = []
+        new_row = []
         for row in range(len(matrix)):
             new_row.append(matrix[row][col])
         result.append(new_row)
