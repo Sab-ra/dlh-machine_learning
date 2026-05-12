@@ -3,7 +3,7 @@
 
 
 def matrix_transpose(matrix):
-"""Loop to swap raws with columns"""
+    """Loop to swap raws with columns"""
 
     result = []
 
