@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-def matrix_shape(matrix):  
+def matrix_shape(matrix):
     result = []
     while True:
         try:
@@ -8,4 +8,3 @@ def matrix_shape(matrix):
         except TypeError:
             break
     return result
-            
