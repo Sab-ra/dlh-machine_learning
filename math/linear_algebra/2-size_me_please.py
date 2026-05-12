@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""Module that sizes matrices"""
+
+
 def matrix_shape(matrix):
     result = []
     while True:
