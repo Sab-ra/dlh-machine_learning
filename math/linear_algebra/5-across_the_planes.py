@@ -3,7 +3,7 @@
 
 def add_matrices2D(mat1, mat2):
     """Element-wize"""
-    msh = __import__('./2-size_me_please')
+    msh = __import__('2-size_me_please')
     if msh.matrix_shape(mat1) != msh.matrix_shape(mat2):
         return None
     else:
