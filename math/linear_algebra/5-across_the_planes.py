@@ -6,7 +6,7 @@ def add_matrices2D(mat1, mat2):
     matrix = []
     msh = __import__('2-size_me_please')
     if mat1 == [] and mat2 == []:
-        return 'OK'
+        return []
     elif mat1 == [] or mat2 == []:
         return None
     elif msh.matrix_shape(mat1) != msh.matrix_shape(mat2):
