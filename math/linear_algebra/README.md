@@ -7,3 +7,4 @@
 4-line_up.py
 5-across_the_planes.py
 6-howdy_partner.py
+7-gettin_cozy.py
