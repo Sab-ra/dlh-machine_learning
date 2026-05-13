@@ -6,6 +6,8 @@ def add_matrices2D(mat1, mat2):
     msh = __import__('2-size_me_please')
     if msh.matrix_shape(mat1) != msh.matrix_shape(mat2):
         return None
+    elif len(mat1) == 0:
+        return None
     else:
         matrix = []
         for row1, row2 in zip(mat1, mat2):
