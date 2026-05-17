@@ -9,3 +9,4 @@
 6-howdy_partner.py
 7-gettin_cozy.py
 8-ridin_bareback.py
+9-let_the_butcher_slice_it.py
