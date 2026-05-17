@@ -3,4 +3,5 @@
 
 
 def np_shape(matrix):
+    """Nativ to np"""
     return matrix.shape
