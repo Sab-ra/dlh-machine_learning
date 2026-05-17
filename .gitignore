@@ -1,0 +1,25 @@
+# Python bytecode (generated every time you run a script)
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS metadata (created whenever Finder touches the folder)
+.DS_Store
+.AppleDouble
+
+# Virtual environments (if you ever run outside Docker locally)
+venv/
+.venv/
+env/
+
+# Jupyter (if notebooks get added later)
+.ipynb_checkpoints/
+
+# Test/coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variable files (secrets)
+.env
+*.env
