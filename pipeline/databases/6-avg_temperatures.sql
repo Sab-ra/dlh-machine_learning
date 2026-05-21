@@ -1,5 +1,5 @@
 -- Select cities by temperature and order
-SELECT city, AVG(value) AS temperature
+SELECT city, AVG(value) AS avg_temp
 FROM temperatures
 GROUP BY city
-ORDER BY temperature DESC;
+ORDER BY avg_temp DESC;
