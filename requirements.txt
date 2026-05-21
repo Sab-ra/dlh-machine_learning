@@ -1,4 +1,4 @@
 numpy
 matplotlib
-flake8
-black
+pymongo==4.6.2
+pycodestyle==2.11.1
