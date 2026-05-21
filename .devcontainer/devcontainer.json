@@ -1,28 +1,20 @@
 {
-  "name": "DLH Machine Learning (Databases)",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/workspace",
-  "mounts": [
-    "source=/run/host-services/ssh-auth.sock,target=/ssh-agent,type=bind"
-  ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
+  "name": "DLH Machine Learning",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-python.pylance",
-        "shd101wyy.markdown-preview-enhanced",
-        "mongodb.mongodb-vscode",
-        "mtxr.sqltools",
-        "cweijan.vscode-mysql-client2"
+        "shd101wyy.markdown-preview-enhanced"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python3",
-        "python.linting.pycodestyleEnabled": true,
-        "python.linting.enabled": true
+        "python.defaultInterpreterPath": "/usr/local/bin/python3"
       }
     }
   }
