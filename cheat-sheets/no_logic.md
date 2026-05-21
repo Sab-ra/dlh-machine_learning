@@ -12,8 +12,8 @@
 |`$\land$`| $\land$ | AND or CONJUNCTION | Both must be true |
 |`$\lor$`| $\lor$ | OR or DISJUNCTION | At least one is true |
 |`$\oplus$`| $\oplus$ | XOR | Exactly one is true |
-|`$\rightarrow$`| $\rightarrow$ | IMPLIES or IF | If A, then B |
-|`$\leftrightarrow$`| $\leftrightarrow$ | BICONDITIONAL or IFF | Both match (if and only if) |
+|`$\rightarrow$`| $\rightarrow$ | IMPLIES | If A, then B |
+|`$\leftrightarrow$`| $\leftrightarrow$ | BICONDITIONAL | Both match (same truth value) |
 |`$\forall$`| $\forall$ | FOR ALL | Everything satisfies |
 |`$\exists$`| $\exists$ | EXISTS | At least one satisfies |
 |`$\exists!$`| $\exists!$ | UNIQUE | Exactly one satisfies |
