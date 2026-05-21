@@ -48,3 +48,4 @@ Install locally MySQL 8.0
 
 0-create_database_if_missing.sql
 1-first_table.sql
+3-insert_value.sql
