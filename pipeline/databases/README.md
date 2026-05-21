@@ -52,3 +52,4 @@ Install locally MySQL 8.0
 4-best_score.sql
 5-average.sql
 6-avg_temperatures.sql
+7-max_state.sql
