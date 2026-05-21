@@ -11,7 +11,9 @@
       "extensions": [
         "ms-python.python",
         "ms-python.pylance",
-        "shd101wyy.markdown-preview-enhanced"
+        "shd101wyy.markdown-preview-enhanced",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python3"
