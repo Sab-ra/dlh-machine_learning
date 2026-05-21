@@ -50,3 +50,4 @@ Install locally MySQL 8.0
 1-first_table.sql
 3-insert_value.sql
 4-best_score.sql
+5-average.sql
