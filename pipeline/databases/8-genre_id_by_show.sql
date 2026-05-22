@@ -1,4 +1,4 @@
---Show shows with at least one genre
+-- Show shows with at least one genre
 SELECT 
 tv_shows.title AS title, 
 tv_show_genres.genre_id AS genre_id
