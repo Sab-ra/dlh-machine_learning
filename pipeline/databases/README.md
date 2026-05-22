@@ -54,3 +54,4 @@ Install locally MySQL 8.0
 6-avg_temperatures.sql
 7-max_state.sql
 8-genre_id_by_show.sql
+9-no_genre.sql
