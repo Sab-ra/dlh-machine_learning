@@ -21,3 +21,11 @@ BEGIN
         -- Grab new ID
         SET p_id = LAST_INSERT_ID();
     END IF;
+
+    -- Add the score to corrections table
+    INSERT INTO corrections (user_id, project_id, score)
+    VALUES (user_id, p_id, score);
+
+END $$
+
+DELIMITER ;
