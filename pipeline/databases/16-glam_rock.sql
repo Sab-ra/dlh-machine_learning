@@ -3,6 +3,6 @@ SELECT
 band_name,
 IFNULL(split, 2020) - formed AS lifespan
 FROM metal_bands
-WHERE style LIKE 'Glam%'
+WHERE style LIKE '%Glam%'
 GROUP BY band_name
 ORDER BY lifespan DESC;
