@@ -17,7 +17,7 @@ BEGIN
     -- Store/update tha back to usrs t
     UPDATE users
     SET average_score = calculated_avg
-    WHERE user.id + user_id;
+    WHERE users.id = user_id;
 
 END $$
 
