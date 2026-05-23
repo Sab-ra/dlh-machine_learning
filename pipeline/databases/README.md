@@ -65,3 +65,4 @@ Install locally MySQL 8.0
 17-store.sql
 18-valid_email.sql
 19-bonus.sql
+20-average_score.sql
