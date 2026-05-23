@@ -3,6 +3,7 @@ DELIMITER $$
 
 CREATE FUNCTION SafeDiv (a INT, b INT)
 RETURNS FLOAT
+DETERMINISTIC
 BEGIN
     -- Check if the denominator is 0
     IF b = 0 THEN
