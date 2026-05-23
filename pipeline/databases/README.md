@@ -61,3 +61,4 @@ Install locally MySQL 8.0
 13-uniq_users.sql
 14-country_users.sql
 15-fans.sql
+16-glam_rock.sql
