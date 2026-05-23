@@ -64,3 +64,4 @@ Install locally MySQL 8.0
 16-glam_rock.sql
 17-store.sql
 18-valid_email.sql
+19-bonus.sql
