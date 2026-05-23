@@ -57,3 +57,4 @@ Install locally MySQL 8.0
 9-no_genre.sql
 10-count_shows_by_genre.sql
 11-rating_shows.sql
+12-rating_genres.sql
