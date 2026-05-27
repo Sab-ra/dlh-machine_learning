@@ -5,17 +5,16 @@
 def inverse(matrix):
     """Based on Determ and Adjugate"""
 
+    adj_calc = __import__('3-adjugate').adjugate
     det_calc = __import__('0-determinant').determinant
 
+    adjugate = adj_calc(matrix)
     determinant = det_calc(matrix)
+
     if determinant == 0:
         return None
     else:
-        adj_calc = __import__('3-adjugate').adjugate
-
-        adjugate = adj_calc(matrix)
         n = len(adjugate)
-
         mtx_inverse = []
         for i in range(n):
             row_mtx_inv = []
