@@ -17,7 +17,7 @@ def definiteness(matrix):
 
     """Calc array of determinants"""
     mtx_dets = []
-    for i in range(n):
+    for i in range(1, (n + 1)):
         shmatrix = []
         for row in range(i):
             shmatrix_row = []
