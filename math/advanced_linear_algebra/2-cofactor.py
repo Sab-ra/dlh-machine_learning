@@ -12,17 +12,8 @@ def cofactor(matrix):
     cofactor_matrix = []
     for i in range(n):
         cofactor_row = []
-        if i % 2 == 0:
-            for j in range(n):
-                if j % 2 == 0:
-                    cofactor_row.append(minor_matrix[i][j])
-                else:
-                    cofactor_row.append(-minor_matrix[i][j])
-        else:
-            for i in range(n):
-                if j % 2 == 0:
-                    cofactor_row.append(-minor_matrix[i][j])
-                else:
-                    cofactor_row.append(minor_matrix[i][j])
+        for j in range(n):
+            sign = (-1) ** (i + j)
+            cofactor_row.append(minor_matrix[i][j] * sign)
         cofactor_matrix.append(cofactor_row)
     return cofactor_matrix
