@@ -13,7 +13,7 @@ def determinant(matrix):
     # validate matrix variable
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a list of lists")
-    if  not all(isinstance(row, list) for row in matrix):
+    if not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
     if not all(len(row) == n for row in matrix):
         if matrix == [[]]:
