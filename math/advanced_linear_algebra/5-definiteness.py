@@ -10,7 +10,7 @@ def definiteness(matrix):
         raise TypeError("matrix must be a numpy.ndarray")
 
     n = len(mtx)
-    if not all(len(mtx[row]) == n for row in mtx):
+    if not all(len(mtx[r]) == n for r in mtx):
         return None
     if not np.allclose(mtx, mtx.T):
         return None
