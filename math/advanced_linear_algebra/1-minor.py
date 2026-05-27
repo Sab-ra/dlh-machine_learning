@@ -16,9 +16,19 @@ def minor(matrix):
     if not all(len(row) == n for row in matrix):
         raise ValueError("matrix must be a non-empty square matrix")
     
+    minor_matrix = []
+
     """Base Case: 1x1 matrix has minor [[1]]"""
     if n == 1:
-        return [[1]]
+        minor_matrix = [[1]]
+        return minor_matrix
+    
+    """Base Case: 2x2 matrix has minor [[d, -b], [-c, a]]"""
+    if n == 2:
+        a, b = matrix[0]
+        c, d = matrix[1]
+        minor_matrix = [[d, c], [b, a]]
+        return minor_matrix
     
     """Recursive Step: Minor of n x n is built from minors of (n-1) x (n-1)"""
     minor_matrix = []
