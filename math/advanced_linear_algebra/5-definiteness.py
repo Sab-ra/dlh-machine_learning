@@ -6,7 +6,7 @@ import numpy as np
 def definiteness(matrix):
     """Validate matrix"""
     mtx = matrix
-    if mtx is not isinstance(np.ndarray):
+    if not isinstance(mtx, np.ndarray):
         raise TypeError("matrix must be a numpy.ndarray")
 
     n = len(mtx)
