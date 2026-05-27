@@ -25,6 +25,8 @@ def definiteness(matrix):
                 shmatrix_row.append(mtx[row][col])
             shmatrix.append(shmatrix_row)
         mtx_dets.append(np.linalg.det(shmatrix))
+    
+    mtx_dets = np.array(mtx_dets)
 
     """Figure definiteness"""
     if np.all(mtx_dets > 0):
