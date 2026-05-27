@@ -12,6 +12,8 @@ def definiteness(matrix):
     n = len(mtx)
     if not all(len(mtx[row]) == n for row in mtx):
         return None
+    if not np.allclose(mtx, mtx.T):
+        return None
 
     """Calc array of determinants"""
     mtx_dets = []
