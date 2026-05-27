@@ -15,19 +15,22 @@ def definiteness(matrix):
     if not np.allclose(mtx, mtx.T):
         return None
 
-    """Calc array of determinants with np.slicing"""
-    mtx_dets = np.array([np.linalg.det(mtx[:i, :i]) for i in range(1, n + 1)])
-
-    """Figure definiteness"""
-    if np.all(mtx_dets > 0):
-        return "Positive definite"
-    elif np.all(mtx_dets >= 0) and np.any(mtx_dets == 0):
-        return "Positive semi-definite"
-    elif np.all(mtx_dets < 0):
-        return "Negative definite"
-    elif np.all(mtx_dets <= 0) and np.any(mtx_dets == 0):
-        return "Negative semi-definite"
-    elif np.any(mtx_dets < 0) and np.any(mtx_dets > 0):
-        return "Indefinite"
-    else:
+    try:
+        # Eigenvalues tell the whole story
+        vals = np.linalg.eigvals(mtx)
+    except np.linalg.LinAlgError:
         return None
+    
+    # Check conditions element-wise
+    if np.all(vals > 0):
+        return "Positive definite"
+    if np.all(vals >= 0) and np.any(np.isclose(vals, 0)):
+        return "Positive semi-definite"
+    if np.all(vals < 0):
+        return "Negative definite"
+    if np.all(vals <= 0) and np.any(np.isclose(vals, 0)):
+        return "Negative semi-definite"
+    if np.any(vals > 0) and np.any(vals < 0):
+        return "Indefinite"
+    
+    return None
