@@ -3,3 +3,4 @@
 2-cofactor.py
 3-adjugate.py
 4-inverse.py
+5-definiteness.py
