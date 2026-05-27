@@ -4,23 +4,24 @@
 
 def determinant(matrix):
     """Preseve integers on computation"""
+    # variables:
+    n = len(matrix)
+    A = [row[:] for row in matrix]
+    det = 1
+    scale = 1
+
     # validate matrix variable
     if not isinstance(matrix, list) or\
         not all(isinstance(row, list)\
                 for row in matrix):
         raise TypeError\
             ("matrix must be a list of lists")
-    if len(matrix) != len(matrix[0]):
-        raise ValueError\
-            ("matrix must be a square matrix")
-    if matrix == [[]]:
-        return 1
-    
-    # variables:
-    n = len(matrix)
-    A = [row[:] for row in matrix]
-    det = 1
-    scale = 1
+    if not all(len(row) == n for row in matrix):
+        if matrix == [[]]:
+            return 1
+        else:
+            raise ValueError\
+                ("matrix must be a square matrix")
 
     for i in range(n):
         if A[i][i] == 0:
