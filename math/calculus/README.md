@@ -6,3 +6,4 @@
 5-log_on_fire
 6-voltaire
 7-partial_truths
+8-all-together
