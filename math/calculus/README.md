@@ -5,3 +5,4 @@
 4-hello_derivatives
 5-log_on_fire
 6-voltaire
+7-partial_truths
