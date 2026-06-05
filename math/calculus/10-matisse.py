@@ -8,15 +8,12 @@ def poly_derivative(poly):
         return None
     if not all(isinstance(i, (int, float)) for i in poly):
         return None
-
-    len(poly) = n
+    n = len(poly)
     if n == 0:
         return None
     if n == 1:      # constant
         return 0
-
     drvtv = []
     for x in range(1, n):
         drvtv.append(x * poly[x])
-
     return drvtv
