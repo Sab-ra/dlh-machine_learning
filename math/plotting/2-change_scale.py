@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Log scale * 10"""
+"""Exp scale * r/t * x"""
 import numpy as np
 import matplotlib.pyplot as plt
 
