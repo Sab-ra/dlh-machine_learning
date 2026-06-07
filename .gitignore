@@ -23,3 +23,7 @@ htmlcov/
 # Environment variable files (secrets)
 .env
 *.env
+
+# Datasets from school
+*.npz
+*.npy
