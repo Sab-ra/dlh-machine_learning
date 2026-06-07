@@ -11,7 +11,7 @@ def line():
 
     plt.plot(y, color="red")
     plt.xlim(0, 10)
-    plt.savefig('line.png')
+    plt.savefig('0-line.png')
     plt.show()
 
 
