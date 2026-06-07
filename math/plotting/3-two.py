@@ -18,6 +18,7 @@ def two():
     plt.xlabel('Time (years)')
     plt.ylabel('Fraction Remaining')
     plt.xlim(0, 20000)
+    plt.ylim(0, 1)
     plt.plot(x, y1, color="red", ls="--", label='C-14')
     plt.plot(x, y2, color="green", ls="-", label='Ra-226')
     plt.legend(loc='upper right')
