@@ -15,7 +15,7 @@ def frequency():
     plt.ylabel('Number of Students')
     plt.xlim(0, 100)
     plt.ylim(0, 30)
-    plt.hist(student_grades, bins=range(0, 110, 10), edgecolor=('black'))
+    plt.hist(student_grades, bins=range(0, 110, 10), edgecolor='black')
 
     plt.savefig('4-frequency')
     plt.show()
