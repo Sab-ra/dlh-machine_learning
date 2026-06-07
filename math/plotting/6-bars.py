@@ -3,10 +3,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def bars():
     """People and Bananas"""
     np.random.seed(5)
-    fruit = np.random.randint(0, 20, (4,3))
+    fruit = np.random.randint(0, 20, (4, 3))
     plt.figure(figsize=(6.4, 4.8))
 
     plt.title('Number of Fruit per Person')
@@ -15,14 +16,14 @@ def bars():
     plt.yticks(range(0, 90, 10))
 
     people = ['Farrah', 'Fred', 'Felicia']
-    colors = ['red', 'yellow', '#ff8000', '#ffe5b4']
-    fruit_names = ['apples', 'bananas', 'oranges', 'peaches']
+    clrs = ['red', 'yellow', '#ff8000', '#ffe5b4']
+    f_nm = ['apples', 'bananas', 'oranges', 'peaches']
     x = np.arange(len(people))
     width = 0.5
 
     bottom = np.zeros(3)
     for i in range(4):
-        plt.bar(x, fruit[i], width, label=fruit_names[i], bottom=bottom, color=colors[i])
+        plt.bar(x, fruit[i], width, label=f_nm[i], bottom=bottom, color=clrs[i])
         bottom += fruit[i]
 
     plt.xticks(x, people)
