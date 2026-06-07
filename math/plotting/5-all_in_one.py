@@ -2,6 +2,8 @@
 """Put 5 graphs on one image"""
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+
 
 def all_in_one():
     """Fricking Bad Idea"""
@@ -29,8 +31,48 @@ def all_in_one():
     np.random.seed(5)
     student_grades = np.random.normal(68, 15, 50)
 
-    plt.title('All in One')
+    fig = plt.figure()
+    fig.suptitle('All in One')
+    gs = gridspec.GridSpec(3, 2, figure=fig)
 
+    plt.subplot(gs[0, 0])
+    plt.xlim(0, 10)
+    plt.plot(y0, color="red")
+
+    plt.subplot(gs[0, 1])
+    plt.title("Men's Height vs Weight", fontsize="x-small")
+    plt.xlabel("Height (in)", fontsize="x-small")
+    plt.ylabel("Weight (lbs)", fontsize="x-small")
+    plt.scatter(x1, y1, color="magenta")
+
+    plt.subplot(gs[1, 0])
+    plt.title("Exponential Decay of C-14", fontsize="x-small")
+    plt.xlabel("Time (years)", fontsize="x-small")
+    plt.ylabel("Fraction Remaining", fontsize="x-small")
+    plt.yscale("log")
+    plt.xlim(0, 28650)
+    plt.plot(x2, y2)
+
+    plt.subplot(gs[1, 1])
+    plt.title('Exponential Decay of Radioactive Elements', fontsize="x-small")
+    plt.xlabel('Time (years)', fontsize="x-small")
+    plt.ylabel('Fraction Remaining', fontsize="x-small")
+    plt.xlim(0, 20000)
+    plt.ylim(0, 1)
+    plt.plot(x3, y31, color="red", ls="--", label='C-14')
+    plt.plot(x3, y32, color="green", ls="-", label='Ra-226')
+    plt.legend(loc='upper right', fontsize="x-small")
+
+    plt.subplot(gs[2, :])
+    plt.title('Project A', fontsize="x-small")
+    plt.xlabel('Grades', fontsize="x-small")
+    plt.ylabel('Number of Students', fontsize="x-small")
+    plt.xlim(0, 100)
+    plt.ylim(0, 30)
+    plt.hist(student_grades, bins=range(0, 110, 10), edgecolor='black')
+    plt.xticks(range(0, 110, 10))
+
+    plt.subplots_adjust(left=0.15, right=0.93, top=0.93, bottom=0.1, hspace=0.8, wspace=0.5)
     plt.savefig('5-all_in_one')
     plt.show()
 

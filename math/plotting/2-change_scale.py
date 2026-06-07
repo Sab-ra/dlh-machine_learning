@@ -20,6 +20,7 @@ def change_scale():
     plt.xlim(0, 28650)
 
     plt.savefig('2-change_scale')
+    plt.show()
 
 
 if __name__ == '__main__':
