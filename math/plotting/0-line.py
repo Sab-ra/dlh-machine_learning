@@ -10,3 +10,6 @@ def line():
     plt.plot(y)
     plt.savefig('line.png')
     plt.show()
+
+if __name__ == '__main__':
+    line()
