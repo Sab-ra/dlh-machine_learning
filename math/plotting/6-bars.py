@@ -17,13 +17,13 @@ def bars():
 
     people = ['Farrah', 'Fred', 'Felicia']
     clrs = ['red', 'yellow', '#ff8000', '#ffe5b4']
-    f_nm = ['apples', 'bananas', 'oranges', 'peaches']
+    frs = ['apples', 'bananas', 'oranges', 'peaches']
     x = np.arange(len(people))
     width = 0.5
 
     bottom = np.zeros(3)
     for i in range(4):
-        plt.bar(x, fruit[i], width, label=f_nm[i], bottom=bottom, color=clrs[i])
+        plt.bar(x, fruit[i], width, label=frs[i], bottom=bottom, color=clrs[i])
         bottom += fruit[i]
 
     plt.xticks(x, people)
