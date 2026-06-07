@@ -1,28 +1,22 @@
-FROM python:3.13-slim
+FROM python:3.11-slim
 
-# System tools + glow (terminal markdown renderer)
-RUN apt-get update \
-&& export DEBIAN_FRONTEND=noninteractive \
-&& apt-get install -y \
-    git \
-    curl \
-    gnupg \
-    wget \
-    lsb-release \
-    # Install glow
-    && curl -fsSL https://repo.charm.sh/apt/gpg.key \
-       | gpg --dearmor -o /etc/apt/keyrings/charm.gpg \
-    && echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" \
-       > /etc/apt/sources.list.d/charm.list \
-    && apt-get update && apt-get install -y glow \
-    # Install default MySQL (MariaDB) Server
-    && apt-get install -y default-mysql-server \
-    && rm -rf /var/lib/apt/lists/*
-
-# matplotlib in headless mode (no GUI window — save figures to files instead)
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 ENV MPLBACKEND=Agg
 
 WORKDIR /workspace
 
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        git curl gnupg wget lsb-release python3-tk default-mysql-client && \
+    mkdir -p /etc/apt/keyrings && \
+    curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" > /etc/apt/sources.list.d/charm.list && \
+    apt-get update && apt-get install -y glow && \
+    rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN useradd -ms /bin/bash vscode
+USER vscode

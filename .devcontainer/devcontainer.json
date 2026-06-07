@@ -4,19 +4,24 @@
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "workspaceFolder": "/workspace",
+
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-python.pylance",
-        "shd101wyy.markdown-preview-enhanced",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "ms-azuretools.vscode-docker",
         "mtxr.sqltools",
         "mtxr.sqltools-driver-mysql"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python3"
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+        "python.analysis.typeCheckingMode": "basic",
+        "jupyter.notebookFileRoot": "/workspace"
       }
     }
   }
