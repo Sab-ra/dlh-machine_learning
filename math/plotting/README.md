@@ -3,3 +3,4 @@
 3-two.py
 4-frequency.py
 5-all_in_one.py
+6-bars.py
