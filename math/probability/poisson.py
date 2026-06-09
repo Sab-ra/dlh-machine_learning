@@ -32,8 +32,7 @@ class Poisson:
             denom = self.__factorial(k)
             probka = nom / denom
             return probka
-        
-    # Helpers:
+
     def __exponential(self, x):
         """Calculate e^x"""
         result = 1
@@ -42,7 +41,7 @@ class Poisson:
             term *= x / i
             result += term
         return result
-  
+
     def __factorial(self, n):
         """Calculate factorial"""
         if n == 0:
