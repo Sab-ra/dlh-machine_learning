@@ -20,7 +20,7 @@ class Poisson:
                 raise ValueError('data must contain multiple values')
             self.lambtha = float(sum(data) / len(data))
 
-    def mpf(self, k):
+    def pmf(self, k):
         """calculate P(X=k) with known lambtha"""
         lambtha = self.lambtha
         probka = 0
