@@ -2,7 +2,7 @@
 """Exponental module"""
 
 
-class Exponental:
+class Exponential:
     """Will be meaningful"""
 
     def __init__(self, data=None, lambtha=1.):
@@ -15,6 +15,11 @@ class Exponental:
         else:
             self.lambtha = lambtha
 
+        if self.__data == None:
+            return 0
+        else:
+            return len(self.__data) / sum(self.__data)
+
     """getters & setters"""
 
     @property
@@ -25,6 +30,8 @@ class Exponental:
     @lambtha.setter
     def lambtha(self, value):
         """set valid value of lambtha"""
+        if self.__data is not None:
+            raise ValueError("cannot set lambtha when data provided")
         if not isinstance(value, (int, float)):
             raise TypeError("lambtha must be a number")
         if value <= 0:
