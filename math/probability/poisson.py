@@ -3,7 +3,7 @@
 
 
 class Poisson:
-    """Bare bones of Poisson"""
+    """Poisson Hacked"""
     def __init__(self, data=None, lambtha=1.):
         """data <- list, lambtha <- number occurances"""
 
@@ -28,19 +28,20 @@ class Poisson:
             return probka
         else:
             k = int(k)
-            nom = self.__exponential(-1 * lambtha) * lambtha ** k
+            e = 2.7182818285
+            nom = e ** (-1 * lambtha) * lambtha ** k
             denom = self.__factorial(k)
             probka = nom / denom
             return probka
 
-    def __exponential(self, x):
-        """Calculate e^x"""
-        result = 1
-        term = 1
-        for i in range(1, 200):
-            term *= x / i
-            result += term
-        return result
+    #def __exponential(self, x):
+    #    """Calculate e^x"""
+    #    result = 1
+    #    term = 1
+    #    for i in range(1, 200):
+    #        term *= x / i
+    #        result += term
+    #    return result
 
     def __factorial(self, n):
         """Calculate factorial"""
