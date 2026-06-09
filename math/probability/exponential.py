@@ -26,6 +26,17 @@ class Exponential:
             density = lmbth / e ** (lmbth * x)
             return density
 
+    def cdf(self, x):
+        """calculate CDF for given time period"""
+        lmbth = self.lambtha
+        acculexos = 0
+        if x < 0:
+            return acculexos
+        else:
+            e = 2.7182818285
+            acculexos = 1 - (1 / (e ** (lmbth * x)))
+            return acculexos
+
     """getters & setters"""
 
     @property
