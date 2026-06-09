@@ -29,7 +29,7 @@ class Poisson:
         else:
             k = int(k)
             probka = (self.__exponential(-1 * lambtha) * lambtha ** k) / self.__factorial(k)
-            return probka
+            return float(f"{probka:.10f}")
         
     # Helpers:
     def __exponential(self, x):
