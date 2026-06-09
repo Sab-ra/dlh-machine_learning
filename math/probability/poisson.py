@@ -34,15 +34,6 @@ class Poisson:
             probka = nom / denom
             return probka
 
-    #def __exponential(self, x):
-    #    """Calculate e^x"""
-    #    result = 1
-    #    term = 1
-    #    for i in range(1, 200):
-    #        term *= x / i
-    #        result += term
-    #    return result
-
     def __factorial(self, n):
         """Calculate factorial"""
         if n == 0:
