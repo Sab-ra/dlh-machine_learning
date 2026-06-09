@@ -15,6 +15,16 @@ class Exponential:
         else:
             self.lambtha = lambtha
 
+    def pdf(self, x):
+        """calculate probability density at a point"""
+        lmbth = self.lambtha
+        density = 0
+        if x <= 0:
+            return density
+        else:
+            e = 2.7182818285
+            density = lmbth / e ** (lmbth * x)
+
     """getters & setters"""
 
     @property
