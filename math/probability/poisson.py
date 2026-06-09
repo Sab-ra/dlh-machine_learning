@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Module contains poisson distribution class"""
-import math as mt
 
 
 class Poisson:
@@ -29,5 +28,24 @@ class Poisson:
             return probka
         else:
             k = int(k)
-            probka = (mt.e ** (-1 * (lambtha)) * lambtha ** k) / mt.factorial(k)
+            probka = (self.__exponential(-1 * lambtha) * lambtha ** k) / self.__factorial(k)
             return probka
+        
+    # Helpers:
+    def __exponential(self, x):
+        """Calculate e^x"""
+        result = 1
+        term = 1
+        for i in range(1, 50):
+            term *= x / i
+            result += term
+        return result
+    
+    def __factorial(self, n):
+        if n == 0:
+            return 1
+        else:
+            result = 1
+            for i in range(1, n+1):
+                result *= i
+        return result
