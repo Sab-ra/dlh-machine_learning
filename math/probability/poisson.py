@@ -29,14 +29,14 @@ class Poisson:
         else:
             k = int(k)
             probka = (self.__exponential(-1 * lambtha) * lambtha ** k) / self.__factorial(k)
-            return float(f"{probka:.10f}")
+            return probka
         
     # Helpers:
     def __exponential(self, x):
         """Calculate e^x"""
         result = 1
         term = 1
-        for i in range(1, 100):
+        for i in range(1, 200):
             term *= x / i
             result += term
         return result
