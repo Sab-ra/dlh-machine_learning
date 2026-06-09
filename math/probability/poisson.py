@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Module contains poisson distribution class"""
+import math as mt
 
 
 class Poisson:
@@ -19,3 +20,14 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError('data must contain multiple values')
             self.lambtha = float(sum(data) / len(data))
+
+    def mpf(self, k):
+        """calculate P(X=k) with known lambtha"""
+        lambtha = self.lambtha
+        probka = 0
+        if k < 0:
+            return probka
+        else:
+            k = int(k)
+            probka = (mt.e ** (-1 * (lambtha)) * lambtha ** k) / mt.factorial(k)
+            return probka
