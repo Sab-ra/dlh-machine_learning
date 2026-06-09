@@ -24,6 +24,7 @@ class Exponential:
         else:
             e = 2.7182818285
             density = lmbth / e ** (lmbth * x)
+            return density
 
     """getters & setters"""
 
