@@ -15,18 +15,13 @@ class Exponential:
         else:
             self.lambtha = lambtha
 
-        if self.__data == None:
-            return 0
-        else:
-            return len(self.__data) / sum(self.__data)
-
     """getters & setters"""
 
     @property
     def lambtha(self):
         """get lambtha value"""
         return self.__lambtha
-    
+
     @lambtha.setter
     def lambtha(self, value):
         """set valid value of lambtha"""
@@ -42,9 +37,10 @@ class Exponential:
     def data(self):
         """get data value"""
         return self.__data
-    
+
     @data.setter
     def data(self, value):
+        """set data, calc Exponential from it"""
         if not isinstance(value, list):
             raise TypeError("data must be a list")
         if len(value) < 2:
@@ -52,5 +48,4 @@ class Exponential:
         if not all(isinstance(x, (int, float)) for x in value):
             raise TypeError('data must contain only numbers')
         self.__data = value
-        self.__lambtha = sum(value) / len(value)
-
+        self.__lambtha = len(value) / sum(value)
