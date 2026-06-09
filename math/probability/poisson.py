@@ -28,9 +28,9 @@ class Poisson:
             return probka
         else:
             k = int(k)
-            probka = (self.__exponential(-1 * lambtha) * lambtha ** k) / self.__factorial(k)
-            if probka == 0.164989159:
-                probka = 0.1649891589
+            nom = self.__exponential(-1 * lambtha) * lambtha ** k
+            denom = self.__factorial(k)
+            probka = nom / denom
             return probka
         
     # Helpers:
@@ -44,6 +44,7 @@ class Poisson:
         return result
   
     def __factorial(self, n):
+        """Calculate factorial"""
         if n == 0:
             return 1
         else:
