@@ -33,6 +33,18 @@ class Poisson:
             denom = self.__factorial(k)
             probka = nom / denom
             return probka
+        
+    def cdf(self, k):
+        probleska = 0
+        if k < 0:
+            return probleska
+        else:
+            k = int(k)
+            pmfs = []
+            for i in range(k+1):
+                pmfs.append(self.pmf(i))
+            probleska = sum(pmfs)
+            return probleska
 
     def __factorial(self, n):
         """Calculate factorial"""
