@@ -32,24 +32,15 @@ class Poisson:
             return probka
         
     # Helpers:
-    #def __exponential(self, x):
-    #    """Calculate e^x"""
-    #    result = 1
-    #    term = 1
-    #    for i in range(1, 50):
-    #        term *= x / i
-    #        result += term
-    #    return result
     def __exponential(self, x):
-        """Calculate e^x using factorial in denominator"""
-        result = 0.0
-        factorial = 1
-        for i in range(100):
-            if i > 0:
-                factorial *= i
-            result += (x ** i) / factorial
+        """Calculate e^x"""
+        result = 1
+        term = 1
+        for i in range(1, 100):
+            term *= x / i
+            result += term
         return result
-    
+  
     def __factorial(self, n):
         if n == 0:
             return 1
@@ -57,4 +48,4 @@ class Poisson:
             result = 1
             for i in range(1, n+1):
                 result *= i
-        return result
+        return round(result, 10)
