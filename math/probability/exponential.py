@@ -19,7 +19,7 @@ class Exponential:
         """calculate probability density at a point"""
         lmbth = self.lambtha
         density = 0
-        if x <= 0:
+        if x < 0:
             return density
         else:
             e = 2.7182818285
