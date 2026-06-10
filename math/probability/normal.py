@@ -24,6 +24,14 @@ class Normal:
     def x_value(self, z):
         """calc x-value from given z-score"""
         return z * self.__stddev + self.__mean
+    
+    def pdf(self, x):
+        """calc value of PDF for a given x"""
+        e = 2.7182818285
+        pi = 3.1415926536
+        coef_e = 1 / ((self.__stddev) * self.__sqrt(2 * pi))
+        exponent_e = (-1) * (x - self.__mean) ** 2 / (2 * self.__stddev ** 2)
+        return coef_e * e ** exponent_e
 
     """getters & setters"""
 
