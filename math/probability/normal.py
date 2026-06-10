@@ -5,17 +5,17 @@
 class Normal:
     """Gives mean and std dev-on for data sets"""
 
-    def __init__(self, data=None, mean=0., stdev=1.):
+    def __init__(self, data=None, mean=0., stddev=1.):
         """Constructor init"""
         self.__data = None
         self.__mean = None
-        self.__stdev = None
+        self.__stddev = None
 
         if data is not None:
             self.data = data
         else:
             self.mean = mean
-            self.stdev = stdev
+            self.stddev = stddev
 
     """getters & setters"""
 
@@ -35,9 +35,9 @@ class Normal:
             raise TypeError('data must contain only numbers')
         self.__data = value
 
-        # calculate mean and stdev from data
+        # calculate mean and stddev from data
         self.__mean = self.__calculate_mean(value)
-        self.__stdev = self.__calculate_stdev(value)
+        self.__stddev = self.__calculate_stddev(value)
 
     @property
     def mean(self):
@@ -52,28 +52,28 @@ class Normal:
         self.__mean = float(value)
 
     @property
-    def stdev(self):
+    def stddev(self):
         """get standard deviation value"""
-        return self.__stdev
+        return self.__stddev
     
-    @stdev.setter
-    def stdev(self, value):
+    @stddev.setter
+    def stddev(self, value):
         """set valid standard deviation"""
         if self.__data is not None:
-            raise ValueError('cannot set stdev when data')
+            raise ValueError('cannot set stddev when data')
         if not isinstance(value, (int, float)):
-            raise TypeError('stdeviation must b a number')
+            raise TypeError('stddeviation must b a number')
         if value <= 0:
-            raise ValueError('stdev must be a positive value')
-        self.__stdev = float(value)
+            raise ValueError('stddev must be a positive value')
+        self.__stddev = float(value)
 
     """helpers"""
     def __calculate_mean(self, data):
         "calculate mean from data"
         return sum(data) / len(data)
 
-    def __calculate_stdev(self, data):
-        """calculate stdev from data"""
+    def __calculate_stddev(self, data):
+        """calculate stddev from data"""
         mad = []
         for i in range(len(data)):
             dev = self.__calculate_mean(data) - data[i]
