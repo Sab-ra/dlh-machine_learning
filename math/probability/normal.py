@@ -31,7 +31,7 @@ class Normal:
             raise TypeError('data must be a list')
         if len(value) < 2:
             raise ValueError('data must contain multiple values')
-        if not(all(isinstance(x, (int, float)) for x in value)):
+        if not (all(isinstance(x, (int, float)) for x in value)):
             raise TypeError('data must contain only numbers')
         self.__data = value
 
@@ -43,7 +43,7 @@ class Normal:
     def mean(self):
         """get mean value"""
         return self.__mean
-    
+
     @mean.setter
     def mean(self, value):
         """set mean: data or default"""
@@ -55,7 +55,7 @@ class Normal:
     def stddev(self):
         """get standard deviation value"""
         return self.__stddev
-    
+
     @stddev.setter
     def stddev(self, value):
         """set valid standard deviation"""
@@ -89,4 +89,3 @@ class Normal:
             dev = self.__calculate_mean(data) - data[i]
             mad.append(dev ** 2)
         return self.__sqrt((sum(mad) / len(mad)))
-        
