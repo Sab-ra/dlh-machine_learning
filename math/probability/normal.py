@@ -88,5 +88,5 @@ class Normal:
         for i in range(len(data)):
             dev = self.__calculate_mean(data) - data[i]
             mad.append(dev ** 2)
-        return self.__sqrt((sum(mad) / (len(mad) - 1)))
+        return self.__sqrt((sum(mad) / len(mad)))
         
