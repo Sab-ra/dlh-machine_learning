@@ -64,7 +64,7 @@ class Normal:
         if not isinstance(value, (int, float)):
             raise TypeError('stdeviation must b a number')
         if value <= 0:
-            raise ValueError('stddev must be a positive value')
+            raise ValueError('stdev must be a positive value')
         self.__stdev = float(value)
 
     """helpers"""
