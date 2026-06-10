@@ -84,8 +84,6 @@ class Normal:
 
     def __calculate_stddev(self, data):
         """calculate stddev from data"""
-        mad = []
-        for i in range(len(data)):
-            dev = self.__calculate_mean(data) - data[i]
-            mad.append(dev ** 2)
-        return self.__sqrt((sum(mad) / len(mad)))
+        mean = self.__calculate_mean(data)
+        variance = sum((x - mean) ** 2 for x in data) / len(data)
+        return self.__sqrt(variance)
