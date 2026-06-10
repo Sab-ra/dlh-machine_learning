@@ -68,6 +68,16 @@ class Normal:
         self.__stddev = float(value)
 
     """helpers"""
+
+    def __sqrt(self, x):
+        """calculate SQRT with Newtons method"""
+        if x <= 0:
+            return 0
+        guess = x
+        for _ in range(50):
+            guess = (guess + x / guess) / 2
+        return guess
+
     def __calculate_mean(self, data):
         "calculate mean from data"
         return sum(data) / len(data)
@@ -78,5 +88,5 @@ class Normal:
         for i in range(len(data)):
             dev = self.__calculate_mean(data) - data[i]
             mad.append(dev ** 2)
-        return (sum(mad) / (len(mad) - 1)) ** (1/2)
+        return self.__sqrt((sum(mad) / (len(mad) - 1)))
         
