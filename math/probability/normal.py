@@ -76,7 +76,7 @@ class Normal:
         """calculate stdev from data"""
         mad = []
         for i in range(len(data)):
-            dev = self.__calculate_mean - data[i]
+            dev = self.__calculate_mean(data) - data[i]
             mad.append(dev ** 2)
-        return sum(mad) / len(mad)
+        return (sum(mad) / (len(mad) - 1)) ** (1/2)
         
