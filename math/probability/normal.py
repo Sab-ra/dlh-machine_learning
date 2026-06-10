@@ -74,7 +74,7 @@ class Normal:
         if x <= 0:
             return 0
         guess = x
-        for _ in range(50):
+        for _ in range(100):
             guess = (guess + x / guess) / 2
         return guess
 
