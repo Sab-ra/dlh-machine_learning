@@ -20,7 +20,7 @@ class Normal:
     def z_score(self, x):
         """calc z-score of a given x value"""
         return (x - self.__mean) / self.__stddev
-    
+
     def x_value(self, z):
         """calc x-value from given z-score"""
         return z * self.__stddev + self.__mean
