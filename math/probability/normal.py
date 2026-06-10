@@ -24,7 +24,7 @@ class Normal:
     def x_value(self, z):
         """calc x-value from given z-score"""
         return z * self.__stddev + self.__mean
-    
+
     def pdf(self, x):
         """calc value of PDF for a given x"""
         e = 2.7182818285
