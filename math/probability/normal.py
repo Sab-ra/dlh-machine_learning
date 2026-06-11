@@ -38,8 +38,8 @@ class Normal:
         """calc value of CDF for a given x (integral from PDF)"""
         pi = 3.1415926536
         x = self.z_score(x) / self.__sqrt(2)
-        fuck = (x - (x ** 3 / 3) + (x ** 5 / 10) - (x ** 7 / 42) + (x ** 9 / 216))
-        erf = 2 / self.__sqrt(pi) * fuck
+        f = (x - (x ** 3 / 3) + (x ** 5 / 10) - (x ** 7 / 42) + (x ** 9 / 216))
+        erf = 2 / self.__sqrt(pi) * f
         return 0.5 * (1 + erf)
 
     """getters & setters"""
