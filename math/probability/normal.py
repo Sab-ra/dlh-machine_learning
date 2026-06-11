@@ -37,9 +37,7 @@ class Normal:
     def cdf(self, x):
         """calc value of CDF for a given x (integral from PDF)"""
         pi = 3.1415926536
-        mean = self.__mean
-        stddev = self.__stddev
-        x = self.z_score(x)
+        x = self.z_score(x) / self.__sqrt(2)
         fuck = (x - (x ** 3 / 3) + (x ** 5 / 10) - (x ** 7 / 42) + (x ** 9 / 216))
         erf = 2 / self.__sqrt(pi) * fuck
         return 0.5 * (1 + erf)
