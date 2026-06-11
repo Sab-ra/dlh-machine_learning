@@ -33,7 +33,9 @@ class Binomial:
         if not all(isinstance(x, (int, float)) for x in value):
             raise TypeError('data must contain only numbers')
         
-    # calculations from data
+        # calculations from data
+        self.__p = self.__calculate__p(value)
+        self.__n = self.__calculate__n(value)
 
     @property
     def n(self):
@@ -63,4 +65,14 @@ class Binomial:
             raise TypeError('must be a number from 0 to 1')
         if value < 0 or value > 1:
             raise ValueError('must be greater than 0 and less than 1')
-        self.__p = float(value)         
+        self.__p = float(value)
+
+    """helpers"""
+
+    def __calculate__n(self, data):
+        """calculate Bernolli trails from data"""
+        return len(data)
+
+    def __calculate__p(self, data):
+        """calculate probability from data"""
+        return sum(data) / len(data)
