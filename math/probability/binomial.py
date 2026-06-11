@@ -34,8 +34,8 @@ class Binomial:
             raise TypeError('data must contain only numbers')
         
         # calculations from data
-        self.__p = self.__calculate__p(value)
         self.__n = self.__calculate__n(value)
+        self.__p = self.__calculate__p(value)
 
     @property
     def n(self):
