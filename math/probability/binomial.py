@@ -71,7 +71,7 @@ class Binomial:
 
     def __calculate__n(self, data):
         """calculate Bernolli trails from data"""
-        return sum(data) / len(data)
+        return round(sum(data) / len(data))
 
     def __calculate__p(self, data):
         """calculate probability from data"""
