@@ -64,7 +64,7 @@ class Binomial:
         """set probability"""
         if not isinstance(value, (int, float)):
             raise TypeError('must be a number from 0 to 1')
-        if value <= 0 or value >= 1:
+        if value < 0 or value > 1:
             raise ValueError('must be greater than 0 and less than 1')
         self.__p = float(value)
 
