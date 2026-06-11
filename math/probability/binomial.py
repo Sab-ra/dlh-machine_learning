@@ -75,5 +75,4 @@ class Binomial:
 
     def __calculate__p(self, data):
         """calculate probability from data"""
-        n = self.__calculate__n(data)
-        return sum(data) / (n * len(data))
+        return sum(data) / (self.__n * len(data))
