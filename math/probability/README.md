@@ -12,6 +12,11 @@ classDiagram
         -__stddev: float
         
         +__init__(data=None, mean=0.0, stddev=1.0)
+
+        +z_score(x): float
+        +x_value(z): float
+        +pdf(x): float
+        +cdf(x): float
         
         +data: property~get/set~
         +mean: property~get/set~
@@ -25,4 +30,8 @@ classDiagram
     Normal : Validates input data
     Normal : Protects attributes with properties
     Normal : Calculates statistics internally
+    Normal : probability distributions
 ```
+
+binomial.py
+
