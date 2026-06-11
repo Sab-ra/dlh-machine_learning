@@ -23,7 +23,7 @@ class Binomial:
     def data(self):
         """get data value"""
         return self.__data
-    
+
     @data.setter
     def data(self, value):
         if not isinstance(value, list):
@@ -32,6 +32,7 @@ class Binomial:
             raise ValueError('data must contain multiple values')
         if not all(isinstance(x, (int, float)) for x in value):
             raise TypeError('data must contain only numbers')
+        self.__data = value
         
         # calculations from data
         self.__n = self.__calculate__n(value)
@@ -57,7 +58,7 @@ class Binomial:
     def p(self):
         """get probability"""
         return self.__p
-    
+
     @p.setter
     def p(self, value):
         """set probability"""
@@ -76,3 +77,4 @@ class Binomial:
     def __calculate__p(self, data):
         """calculate probability from data"""
         return sum(data) / (self.__n * len(data))
+    
