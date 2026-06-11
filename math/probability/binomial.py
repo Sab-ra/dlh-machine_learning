@@ -30,8 +30,8 @@ class Binomial:
             raise TypeError('data must be a list')
         if len(value) < 2:
             raise ValueError('data must contain multiple values')
-        if not all(isinstance(x, (int, float)) for x in value):
-            raise TypeError('data must contain only numbers')
+        #if not all(isinstance(x, (int, float)) for x in value):
+        #    raise TypeError('data must contain only numbers')
         self.__data = value
         
         # calculations from data
