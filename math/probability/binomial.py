@@ -35,19 +35,21 @@ class Binomial:
         self.__data = value
         
         # calculations from data
-        self.__n = self.__calculate__n(value)
-        self.__p = self.__calculate__p(value)
+        mean = self.__calculate__mean(value)
+        variance = self.__calculate_variance(value)
+        self.__n = self.__calculate__n(mean, variance)
+        self.__p = self.__calculate__p(mean, self.__n)
 
     @property
     def n(self):
-        """get number of Bernoulli trails"""
+        """get number of Bernoulli trials"""
         return self.__n
     
     @n.setter
     def n(self, value):
-        """set number of Bernoulli trails"""
+        """set number of Bernoulli trials"""
         if self.__data is not None:
-            raise ValueError('cannont change n derrived from data')
+            raise ValueError('cannot change n derived from data')
         if not isinstance(value, (int, float)):
             raise TypeError('must be a positive number')
         if value <= 0:
@@ -70,11 +72,20 @@ class Binomial:
 
     """helpers"""
 
-    def __calculate__n(self, data):
-        """calculate Bernolli trails from data"""
-        return round(sum(data) / len(data))
+    def __calculate__mean(self, data):
+        """calculate mean from data"""
+        return sum(data) / len(data)
+    
+    def __calculate_variance(self, data):
+        """calculate variance from mean and data"""
+        mean = self.__calculate__mean(data)
+        return sum((x - mean) ** 2 for x in data) / len(data)
+    
+    def __calculate__n(self, mean, variance):
+        """calculate Bernoulli trials from mean and variance"""
+        return round(mean * (1 - mean) / variance)
 
-    def __calculate__p(self, data):
-        """calculate probability from data"""
-        return sum(data) / (self.__n * len(data))
+    def __calculate__p(self, mean, n):
+        """calculate probability from mean and n"""
+        return mean / n
     
