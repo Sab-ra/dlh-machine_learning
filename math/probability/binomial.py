@@ -45,7 +45,7 @@ class Binomial:
         self.__p = float(p)
 
     def pmf(self, k):
-        """calculate pmf"""
+        """calculate PMF"""
         n = self.__n
         p = self.__p
         k = int(k)
@@ -57,6 +57,13 @@ class Binomial:
             return 0
         else:
             return (n_fckt / denom) * p ** k * (1 - p) ** (n - k)
+
+    def cdf(self, k):
+        """calculate CDF"""
+        if k < 0 or int(k) > n:
+            return 0
+        else:
+            return self.pmf(k) += self.pmf(k-1)
 
     @property
     def n(self):
