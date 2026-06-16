@@ -60,10 +60,16 @@ class Binomial:
 
     def cdf(self, k):
         """calculate CDF"""
-        if k < 0 or int(k) > n:
+        n = self.__n
+        if k < 0:
             return 0
+        elif k >= 1:
+            return 1
         else:
-            return self.pmf(k) += self.pmf(k-1)
+            result = 0
+            for k in range(n):
+                result += self.pmf(k)
+            return result
 
     @property
     def n(self):
