@@ -30,13 +30,19 @@ class Binomial:
             raise TypeError('data must be a list')
         if len(value) < 2:
             raise ValueError('data must contain multiple values')
-        #if not all(isinstance(x, (int, float)) for x in value):
-        #    raise TypeError('data must contain only numbers')
+        if not all(isinstance(x, (int, float)) for x in value):
+            raise TypeError('data must contain only numbers')
         self.__data = value
         
-        # calculations from data
-        self.__n = self.__calculate_n(value)
-        self.__p = self.__calculate_p(value)
+        mean = self.__mean(value)
+        variance = self.__variance(value, mean)
+
+        p = 1 - (variance / mean)
+        n = round(mean / p)
+        p = mean / n
+
+        self.__n = int(n)
+        self.__p = float(p)
 
     @property
     def n(self):
@@ -51,7 +57,7 @@ class Binomial:
         if not isinstance(value, (int, float)):
             raise TypeError('must be a positive number')
         if value <= 0:
-            raise ValueError('must be a positive value')
+            raise ValueError('n must be a positive value')
         self.__n = round(value)
 
     @property
@@ -64,26 +70,16 @@ class Binomial:
         """set probability"""
         if not isinstance(value, (int, float)):
             raise TypeError('must be a number from 0 to 1')
-        if value < 0 or value > 1:
-            raise ValueError('must be greater than 0 and less than 1')
+        if value <= 0 or value >= 1:
+            raise ValueError('p must be greater than 0 and less than 1')
         self.__p = float(value)
 
     """helpers"""
 
-    def __calculate_mean(self, data):
-        """calculate mean from data"""
+    def __mean(self, data):
+        """Calculate mean"""
         return sum(data) / len(data)
     
-    def __calculate_variance(self, data):
-        """calculate variance from mean and data"""
-        mean = self.__calculate__mean(data)
+    def variance(self, data, mean)
+        """Calculate variance"""
         return sum((x - mean) ** 2 for x in data) / len(data)
-    
-    def __calculate_n(self, mean, variance):
-        """calculate Bernolli trails from mean and variance"""
-        return round(mean * (1 - mean) / variance)
-
-    def __calculate_p(self, mean, n):
-        """calculate probability from mean and n"""
-        return mean / n
-    
