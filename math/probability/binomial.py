@@ -46,7 +46,17 @@ class Binomial:
 
     def pmf(self, k):
         """calculate pmf"""
-        return (self.__n * self.__p ** 2) / k
+        n = self.__n
+        p = self.__p
+        k = int(k)
+        n_fckt = self.__fcktrl(n)
+        k_fckt = self.__fcktrl(k)
+        n_k_fckt = self.__fcktrl(n - k)
+        denom = k_fckt * n_k_fckt
+        if k < 0 or int(k) > n:
+            return 0
+        else:
+            return (n_fckt / denom) * p ** k * (1 - p) ** (n - k)
 
     @property
     def n(self):
@@ -87,3 +97,13 @@ class Binomial:
     def __variance(self, data, mean):
         """Calculate variance"""
         return sum((x - mean) ** 2 for x in data) / len(data)
+
+    def __fcktrl(self, n):
+        """Calculate factorial of n"""
+        if n == 0:
+            return 1
+        else:
+            result = 1
+            for i in range(1, n+1):
+                result *= i
+        return result
