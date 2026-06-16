@@ -80,6 +80,6 @@ class Binomial:
         """Calculate mean"""
         return sum(data) / len(data)
 
-    def variance(self, data, mean):
+    def __variance(self, data, mean):
         """Calculate variance"""
         return sum((x - mean) ** 2 for x in data) / len(data)
