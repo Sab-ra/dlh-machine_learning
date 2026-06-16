@@ -33,7 +33,7 @@ class Binomial:
         if not all(isinstance(x, (int, float)) for x in value):
             raise TypeError('data must contain only numbers')
         self.__data = value
-        
+
         mean = self.__mean(value)
         variance = self.__variance(value, mean)
 
@@ -48,7 +48,7 @@ class Binomial:
     def n(self):
         """get number of Bernoulli trails"""
         return self.__n
-    
+
     @n.setter
     def n(self, value):
         """set number of Bernoulli trails"""
@@ -79,7 +79,7 @@ class Binomial:
     def __mean(self, data):
         """Calculate mean"""
         return sum(data) / len(data)
-    
-    def variance(self, data, mean)
+
+    def variance(self, data, mean):
         """Calculate variance"""
         return sum((x - mean) ** 2 for x in data) / len(data)
