@@ -66,6 +66,7 @@ class Binomial:
         elif k >= n:
             return 1
         else:
+            k = int(k)
             result = 0
             for i in range(k + 1):
                 result += self.pmf(i)
