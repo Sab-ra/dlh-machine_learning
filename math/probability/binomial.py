@@ -63,12 +63,12 @@ class Binomial:
         n = self.__n
         if k < 0:
             return 0
-        elif k >= 1:
+        elif k >= n:
             return 1
         else:
             result = 0
-            for k in range(n):
-                result += self.pmf(k)
+            for i in range(n):
+                result += self.pmf(i)
             return result
 
     @property
