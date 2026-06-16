@@ -45,7 +45,8 @@ class Binomial:
         self.__p = float(p)
 
     def pmf(self, k):
-        return = (self.__n * self.__p ** 2) / k
+        """calculate pmf"""
+        return (self.__n * self.__p ** 2) / k
 
     @property
     def n(self):
