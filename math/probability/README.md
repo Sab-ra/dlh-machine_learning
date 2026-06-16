@@ -35,3 +35,7 @@ classDiagram
 
 binomial.py
 
+mean = sum(data) / len(data)
+variance = sum((x - mean)² for x in data) / len(data)
+n = mean² / (mean - variance)
+n = round(n)
