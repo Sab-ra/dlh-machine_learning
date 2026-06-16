@@ -67,7 +67,7 @@ class Binomial:
             return 1
         else:
             result = 0
-            for i in range(n):
+            for i in range(n + 1):
                 result += self.pmf(i)
             return result
 
