@@ -26,5 +26,5 @@ def likelihood(x, n, P):
     if np.any(P < 0) or np.any(P > 1):
         raise ValueError("All values in P must be in the range [0, 1]")
 
-    comb = factorial(n) / factorial(x) * factorial(n - x)
-    return comb * P ** 2 * (1 - P) ** (n - x)
+    comb = factorial(n) / (factorial(x) * factorial(n - x))
+    return comb * P ** x * (1 - P) ** (n - x)
