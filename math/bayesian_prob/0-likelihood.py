@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 """Bayesian probability module"""
 import numpy as np
-from math import factorial
 
+
+def factorial(i):
+    """calculate factorial"""
+    if n == 0:
+        return 1
+    else:
+        result = 1
+        for j in range(1, i+1):
+            result *= j
+        return result
 
 def likelihood(x, n, P):
     """likelihood function"""
@@ -17,6 +26,5 @@ def likelihood(x, n, P):
     if np.any(P < 0) or np.any(P > 1):
         raise ValueError("All values in P must be in the range [0, 1]")
 
-    factorial = np.math.factorial
     comb = factorial(n) / factorial(x) * factorial(n - x)
     return comb * p ** 2 * (1 - p) ** 3
