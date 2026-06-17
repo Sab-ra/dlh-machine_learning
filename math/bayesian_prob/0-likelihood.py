@@ -13,12 +13,15 @@ def factorial(i):
             result *= j
         return result
 
+
 def likelihood(x, n, P):
     """likelihood function"""
+
+    verl = "x must be an integer that is greater than or equal to 0"
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
     if not isinstance(x, int) or x < 0:
-        raise ValueError("x must be an integer that is greater than or equal to 0")
+        raise ValueError(verl)
     if x > n:
         raise ValueError("x cannot be greater than n")
     if not isinstance(P, np.ndarray) or P.ndim != 1:
