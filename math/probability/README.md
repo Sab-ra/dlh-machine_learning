@@ -35,7 +35,29 @@ classDiagram
 
 binomial.py
 
-mean = sum(data) / len(data)
-variance = sum((x - mean)² for x in data) / len(data)
-n = mean² / (mean - variance)
-n = round(n)
+```mermaid
+classDiagram
+    class Binomial {
+        -__data: list
+        -__n: int
+        -__p: float
+        
+        +__init__(data=None, n=1, p=0.5)
+
+        +pmf(k): float
+        +cdf(k): float
+        
+        +data: property~get/set~
+        +n: property~get/set~
+        +p: property~get/set~
+        
+        -__mean(data): float
+        -__variance(data, mean): float
+        -__fcktrl(n): int
+    }
+    
+    Binomial : Validates input data and parameters
+    Binomial : Estimates n and p from sample data
+    Binomial : Computes PMF for exact successes
+    Binomial : Computes CDF for cumulative probability
+```
