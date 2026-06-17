@@ -5,7 +5,7 @@ import numpy as np
 
 def factorial(i):
     """calculate factorial"""
-    if n == 0:
+    if i == 0:
         return 1
     else:
         result = 1
