@@ -24,11 +24,12 @@ def intersection(x, n, P, Pr):
         name_domain = ['P', 'Pr']
         var_p_name = name_domain[i]
         j = var_p[i]
+        erm = f"All values in {var_p_name} must be in the range [0, 1]"
         if np.any((j < 0) | (j > 1)):
-            raise ValueError(f"All values in {var_p_name} must be in the range [0, 1]")
+            raise ValueError(erm)
     if not np.isclose(sum(Pr), 1):
         raise ValueError('Pr must sum to 1')
-    
+
     return likelihood(x, n, P) * Pr
 
 
