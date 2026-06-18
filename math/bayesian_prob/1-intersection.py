@@ -18,8 +18,8 @@ def intersection(x, n, P, Pr):
     if not isinstance(Pr, np.ndarray) or Pr.shape != P.shape:
         raise TypeError('Pr must be a numpy.ndarray with the same shape as P')
     var_p = [P, Pr]
-    name_domain = ['P', 'Pr']
     for i in range(2):
+        name_domain = ['P', 'Pr']
         var_p_name = name_domain[i]
         if np.any((j < 0 | j > 1) for j in var_p[i]):
             raise ValueError(' the range [0, 1], raise a ValueError with the message All values in {var_p_name} must be in the range [0, 1]')
