@@ -22,7 +22,7 @@ def intersection(x, n, P, Pr):
         name_domain = ['P', 'Pr']
         if np.any((j < 0 | j > 1) for j in var_p[i]):
             var_p_name = name_domain[i]
-            raise ValueError(' the range [0, 1], raise a ValueError with the message All values in {var_p_name} must be in the range [0, 1]')
+            raise ValueError(f"All values in {var_p_name} must be in the range [0, 1]")
     if not numpy.isclose(Pr, 1):
         raise ValueError('Pr must sum to 1')
     
