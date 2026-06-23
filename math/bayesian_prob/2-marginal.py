@@ -17,7 +17,7 @@ def marginal(x, n, P, Pr):
     p_pr_ver = f'All values in {var_p_name} must be in the range [0, 1]'
     pr_ver_1 = f'Pr must sum to 1'
 
-    if not isinstance(n, int) or n < 0:
+    if not isinstance(n, int) or n <= 0:
         raise ValueError(n_ver)
     if not isinstance(x, int) or x < 0:
         raise ValueError(x_ver)
