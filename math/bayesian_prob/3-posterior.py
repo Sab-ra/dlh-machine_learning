@@ -8,7 +8,7 @@ def posterior(x, n, P, Pr):
     P(H|E) = P(E|H) * P(H)  /  P(E)
     """
 
-    #Error messages
+    # Error messages
     n_ver = f'n must be a positive integer'
     x_ver = f'x must be an integer that is greater than or equal to 0'
     x_ver_n = f'x cannot be greater than n'
@@ -36,24 +36,24 @@ def posterior(x, n, P, Pr):
             raise ValueError(p_pr_ver)
     if not np.isclose(sum(Pr), 1):
         raise ValueError(pr_ver_1)
-    
+
     return intersection(x, n, P, Pr) / marginal(x, n, P, Pr)
 
 
 def marginal(x, n, P, Pr):
-    """P(E)"""
+    """Baesian: P(E)"""
 
     return np.sum(intersection(x, n, P, Pr))
 
 
 def intersection(x, n, P, Pr):
-    """P(E|H)*P(E)"""
+    """Baesian: P(E|H)*P(E)"""
 
     return likelihood(x, n, P) * Pr
 
 
 def likelihood(x, n, P):
-    """P(E|H)"""
+    """Baesian: P(E|H)"""
 
     return comb(x, n) * P ** x * (1 - P) ** (n - x)
 
