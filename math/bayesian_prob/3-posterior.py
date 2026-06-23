@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Bayesian probability marginal module"""
+"""Bayesian probability Posterior module"""
 import numpy as np
 
 
-def marginal(x, n, P, Pr):
-    """Bayesian formula denominator
-    calculates a sum of all intersections"""
+def posterior(x, n, P, Pr):
+    """Posterior P(H|E) is an adjusted upon new evidance belief
+    P(H|E) = P(E|H) * P(H)  /  P(E)
+    """
 
-    # Error messages
+    #Error messages
     n_ver = f'n must be a positive integer'
     x_ver = f'x must be an integer that is greater than or equal to 0'
     x_ver_n = f'x cannot be greater than n'
@@ -31,41 +32,46 @@ def marginal(x, n, P, Pr):
         var_p_name = name_domain[i]
         j = var_p[i]
         p_pr_ver = f'All values in {var_p_name} must be in the range [0, 1]'
-        if np.any((j < 0) | (j > 1)):
+        if not np.all((j < 0) | (j > 1)):
             raise ValueError(p_pr_ver)
     if not np.isclose(sum(Pr), 1):
         raise ValueError(pr_ver_1)
+    
+    return intersection(x, n, P, Pr) / marginal(x, n, P, Pr)
+
+
+def marginal(x, n, P, Pr):
+    """P(E)"""
 
     return np.sum(intersection(x, n, P, Pr))
 
 
 def intersection(x, n, P, Pr):
-    """Intersection is a
-    product of likelihood and initial belief"""
+    """P(E|H)*P(E)"""
 
     return likelihood(x, n, P) * Pr
 
 
 def likelihood(x, n, P):
-    """likelihood is a
-    probability of evidence showing up
-    given that hypothesis is true"""
+    """P(E|H)"""
 
-    # lklhd = comb(n,x) * p^x * (1-p)^(n-x)
-    comb = factorial(n) / (factorial(x) * factorial(n - x))
-    return comb * P ** x * (1 - P) ** (n - x)
+    return comb(x, n) * P ** x * (1 - P) ** (n - x)
+
+
+def comb(x, n):
+    """number of possible combinations
+    of desired quantity of win: x in n trails"""
+
+    return factorial(n) / (factorial(x) * factorial(n - x))
 
 
 def factorial(natural_number):
-    """calculate factorial
-    of a natural_number!"""
-    # Error messages:
-    ter = 'factorial may be taken only of natural number'
+    """natural_number!"""
 
     if natural_number == 0:
         return 1
     else:
         result = 1
-        for j in range(1, natural_number+1):
-            result *= j
+        for i in range(natural_number + 1):
+            result *= i
         return round(result)

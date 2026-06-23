@@ -4,3 +4,5 @@
 
 2-marginal.py
 
+3-posterior.py
+
