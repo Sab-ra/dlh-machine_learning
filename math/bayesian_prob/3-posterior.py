@@ -32,7 +32,7 @@ def posterior(x, n, P, Pr):
         var_p_name = name_domain[i]
         j = var_p[i]
         p_pr_ver = f'All values in {var_p_name} must be in the range [0, 1]'
-        if not np.all((j < 0) | (j > 1)):
+        if np.any((j < 0) | (j > 1)):
             raise ValueError(p_pr_ver)
     if not np.isclose(sum(Pr), 1):
         raise ValueError(pr_ver_1)
