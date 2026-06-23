@@ -7,6 +7,24 @@ def marginal(x, n, P, Pr):
     """Bayesian formula denominator
     calculates a sum of all intersections"""
 
+    # Error messages for Likelihood:
+    n_ver = f'n must be a positive integer'
+    x_ver = f'x must be an integer that is greater than or equal to 0'
+    x_ver_n = f'x cannot be greater than n'
+    p_ter = f'P must be a 1D numpy.ndarray'
+    p_ver = f'All values in P must be in the range [0, 1]'
+
+    if not isinstance(n, int) or n < 0:
+        raise ValueError(n_ver)
+    if not isinstance(x, int) or x < 0:
+        raise ValueError(x_ver)
+    if x > n:
+        raise ValueError(x_ver_n)
+    if not isinstance(P, np.ndarray) or len(P.shape) != 1:
+        raise TypeError(p_ter)
+    if not np.all(P < 0 | P > 1):
+        raise ValueError(p_ver)
+
     return np.sum(intersection(x, n, P, Pr))
 
 def intersection(x, n, P, Pr):
@@ -33,24 +51,6 @@ def likelihood(x, n, P):
     """likelihood is a
     probability of evidence showing up
     given that hypothesis is true"""
-
-    # Error messages:
-    n_ver = f'n must be a positive integer'
-    x_ver = f'x must be an integer that is greater than or equal to 0'
-    x_ver_n = f'x cannot be greater than n'
-    p_ter = f'P must be a 1D numpy.ndarray'
-    p_ver = f'All values in P must be in the range [0, 1]'
-
-    if not isinstance(n, int) or n < 0:
-        raise ValueError(n_ver)
-    if not isinstance(x, int) or x < 0:
-        raise ValueError(x_ver)
-    if x > n:
-        raise ValueError(x_ver_n)
-    if not isinstance(P, np.ndarray) or len(P.shape) != 1:
-        raise TypeError(p_ter)
-    if not np.all(P < 0 | P > 1):
-        raise ValueError(p_ver)
 
     # lklhd = comb(n,x) * p^x * (1-p)^(n-x)
     comb = factorial(n) / (factorial(x) - factorial(n - x))
