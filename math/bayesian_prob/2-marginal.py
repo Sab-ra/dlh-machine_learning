@@ -61,13 +61,10 @@ def factorial(natural_number):
     # Error messages:
     ter = 'factorial may be taken only of natural number'
 
-    try:
-        if natural_number == 0:
-            return 1
-        else:
-            result = 1
-            for j in range(1, natural_number+1):
-                result *= j
-            return result
-    except TypeError:
-        print(ter)
+    if natural_number == 0:
+        return 1
+    else:
+        result = 1
+        for j in range(1, natural_number+1):
+            result *= j
+        return round(result)
