@@ -51,7 +51,7 @@ def likelihood(x, n, P):
     given that hypothesis is true"""
 
     # lklhd = comb(n,x) * p^x * (1-p)^(n-x)
-    comb = factorial(n) / (factorial(x) - factorial(n - x))
+    comb = factorial(n) / (factorial(x) * factorial(n - x))
     return comb * P ** x * (1 - P) ** (n - x)
 
 
