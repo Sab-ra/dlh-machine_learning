@@ -38,6 +38,7 @@ def marginal(x, n, P, Pr):
 
     return np.sum(intersection(x, n, P, Pr))
 
+
 def intersection(x, n, P, Pr):
     """Intersection is a
     product of likelihood and initial belief"""
