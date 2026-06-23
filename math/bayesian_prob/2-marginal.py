@@ -13,8 +13,8 @@ def marginal(x, n, P, Pr):
     x_ver_n = f'x cannot be greater than n'
     p_ter = f'P must be a 1D numpy.ndarray'
     pr_ter = f'Pr must be a numpy.ndarray with the same shape as P'
-    p_ver = f'All values in P must be in the range [0, 1]'
-    pr_ver = f'All values in Pr must be in the range [0, 1]'
+    var_p_name = ''
+    p_pr_ver = f'All values in {var_p_name} must be in the range [0, 1]'
     pr_ver_1 = f'Pr must sum to 1'
 
     if not isinstance(n, int) or n < 0:
@@ -27,10 +27,13 @@ def marginal(x, n, P, Pr):
         raise TypeError(p_ter)
     if not isinstance(Pr, np.ndarray) or Pr.shape != P.shape:
         raise TypeError(pr_ter)
-    if np.any(P < 0 | P > 1):
-        raise ValueError(p_ver)
-    if np.any(Pr < 0 | Pr > 1):
-        raise ValueError(pr_ver)
+    var_p = [P, Pr]
+    for i in range(2):
+        name_domain = ['P', 'Pr']
+        var_p_name = name_domain[i]
+        j = var_p[i]
+        if np.any((j < 0) | (j > 1)):
+            raise ValueError(p_pr_ver)
     if not np.isclose(sum(Pr), 1):
         raise ValueError(pr_ver_1)
 
