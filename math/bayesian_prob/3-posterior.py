@@ -72,6 +72,6 @@ def factorial(natural_number):
         return 1
     else:
         result = 1
-        for i in range(natural_number + 1):
+        for i in range(1, natural_number + 1):
             result *= i
         return round(result)
