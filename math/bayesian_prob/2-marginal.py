@@ -27,7 +27,7 @@ def marginal(x, n, P, Pr):
         raise TypeError(p_ter)
     if not isinstance(Pr, np.ndarray) or Pr.shape != P.shape:
         raise TypeError(pr_ter)
-    if not np.all(P < 0 | P > 1):
+    if np.any(P < 0 | P > 1):
         raise ValueError(p_ver)
     if np.any(Pr < 0 | Pr > 1):
         raise ValueError(pr_ver)
