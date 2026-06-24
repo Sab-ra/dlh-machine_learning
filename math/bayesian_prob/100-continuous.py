@@ -29,7 +29,7 @@ def posterior(x, n, p1, p2):
         j = var_p[i]
         var_p_name = name_domain[i]
         p_ver = f'{var_p_name} must be a float in the range [0, 1]'
-        if not 0 <= j <= 1:
+        if not isinstance(j, float) or not 0 <= j <= 1:
             raise ValueError(p_ver)
     if p2 <= p1:
         raise ValueError(r_ver)
