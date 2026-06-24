@@ -69,4 +69,6 @@ The **Normalization**: When you divide the Intersection array by the Marginal sc
 
 Wrapping up: "the `posterior` is proportional to this product [of `prior` and `likelihood`]". By keeping the array structure, your posterior function allows you to see how your belief has shifted for every individual win rate you were considering
 
+## 100-continuous.py
+
 
