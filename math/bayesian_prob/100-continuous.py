@@ -17,9 +17,9 @@ def posterior(x, n, p1, p2):
     # p_ver = f'{p} must be a float in the range [0, 1]' - in loop
     r_ver = f'p2 must be greater than p1'
 
-    if not isinstance(n, int) or n < 0:
+    if not isinstance(n, int) or n <= 0:
         raise ValueError(n_ver)
-    if not isinstance(x, int) or x <= 0:
+    if not isinstance(x, int) or x < 0:
         raise ValueError(x_ver)
     if x > n:
         raise ValueError(x_ver_n)
