@@ -71,4 +71,43 @@ Wrapping up: "the `posterior` is proportional to this product [of `prior` and `l
 
 ## 100-continuous.py
 
+Imagine the story: **The Rare Bird Survey**
 
+A surveyor observes `n` total birds and finds that `x` of them belong to a rare species. Starting with **no prior knowledge** (a `Uniform Distribution`), they want to know the probability that the true population rate falls within a specific range, such as $$p1=0.1$$ to $$p2=0.3$$
+
+```mermaid
+graph TD
+    %% Inputs
+    A[<b>The Field Notes</b> <br/>Data: x sightings in n birds] --> B(<b>Updating Parameters</b> <br/>a = x + 1 <br/>b = n - x + 1)
+    
+    %% The Distribution
+    B -->|Define the Posterior| C{<b>The Beta Distribution</b> <br/>Model: Beta_a,b}
+    
+    %% Range Logic
+    C --> D[<b>Query Point p1</b> <br/>CDF_p1]
+    C --> E[<b>Query Point p2</b> <br/>CDF_p2]
+    
+    %% Final Calculation
+    D --> F((<b>Final Probability</b>))
+    E --> F
+    
+    %% Result Note
+    F -->|Result: Area under the curve| G[Probability rate is in range p1, p2]
+
+    %% Legend/Comments
+    subgraph Legend
+    L1[x, n: Evidence used to 'change your mind']
+    L2[a, b: Parameters that shape the 'degree of belief' curve]
+    L3[CDF: The 'Regularized Incomplete Beta' function]
+    end
+```
+
+### Diagram Maps to Code
+
+- The Field Notes (data function): This represents the conversion of raw observations (`x`,`n`) into the shape parameters (`a`,`b`) of a **Beta distribution**. This is a standard Bayesian procedure for Bernoulli trials **when assuming a uniform prior**.
+
+- The **Beta Distribution** (cdf function): Your use of `special.betainc` calculates the Cumulative Distribution Function (CDF). In the Bayesian view, this represents the total **state of knowledge** or **reasonable expectation** accumulated up to point `p`.
+
+- The Final Probability (posterior function): To find the probability within a specific range, you calculate the area under the curve between `p1` and `p2`. Mathematically, this is the **Evidence** at the upper bound minus the **Evidence** at the lower bound `(CDF(p2)−CDF(p1))`.
+
+This modular approach ensures that your final result is a single numerical probability representing how much you should believe the true forest rate falls within your chosen boundaries.
