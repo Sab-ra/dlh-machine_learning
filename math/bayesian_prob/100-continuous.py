@@ -36,7 +36,7 @@ def posterior(x, n, p1, p2):
 
     prob_1 = cdf(x, n, p1)
     prob_2 = cdf(x, n, p2)
-    return float(prob_2 - prob_1)
+    return prob_2 - prob_1
 
 
 def cdf(x, n, p):
