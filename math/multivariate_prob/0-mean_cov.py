@@ -30,7 +30,7 @@ def mean_cov(X):
     # Matrix multiplication (@) of (X-mu).T and (X-mu) handles the 
     # (Rank - mu_rank) * (Die - mu_die) math for every pair.
     # We divide by n to get the average, as used in your manual 5-trial example.
-    cov = (X_centered.T @ X_centered) / n
+    cov = (X_centered.T @ X_centered) / (n - 1)
 
     return mean, cov
     
