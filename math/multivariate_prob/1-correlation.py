@@ -15,7 +15,7 @@ def correlation(C):
         raise TypeError(c_ter)
     if C.ndim != 2 or C.shape[0] != C.shape[1]:
         raise ValueError(c_ver)
-    
+
     std = np.sqrt(np.diag(C))
 
-    return  C / std[:, None] /std[None, :]
+    return C / std[:, None] / std[None, :]
