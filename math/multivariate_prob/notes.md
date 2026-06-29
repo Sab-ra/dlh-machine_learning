@@ -128,3 +128,20 @@ $$
    0.02 & 0.05
 \end{bmatrix}}
 $$
+
+### Corelation $\rho$
+
+Actually, roll dies and card ranks are different. Imagine, like one card ranc would cost $100, and a roll die point would cost £17. Obviously it's not easy to compare.
+
+So, that why we got to relations and co-relations :)
+
+Our covariance matrix: 
+$$
+\Sigma =
+{\begin{bmatrix}
+   8.24 & -3.368  \\
+   -3.368 & 19.84
+\end{bmatrix}}
+$$
+
+
