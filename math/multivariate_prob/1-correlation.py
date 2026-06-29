@@ -13,7 +13,6 @@ def correlation(C):
 
     if not isinstance(C, np.ndarray):
         raise TypeError(c_ter)
-    n, d = C.shape
-    if n != d or C.ndim != 2:
+    if C.ndim != 2 or C.shape[0] != C.shape[1]:
         raise ValueError(c_ver)
     pass
