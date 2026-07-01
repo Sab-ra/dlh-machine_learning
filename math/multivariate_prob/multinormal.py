@@ -36,7 +36,7 @@ class MultiNormal:
         cov_inv = np.linalg.inv(cov)
         denom = (2 * np.pi) ** (d / 2) * np.sqrt(cov_det)
         exponent = -0.5 * (diff.T @ cov_inv @ diff)
-        pdf_val = np.exp(exponent) / denom
+        pdf_val = (1 / denom) * np.exp(exponent)
         return pdf_val[0, 0]
 
     @property
