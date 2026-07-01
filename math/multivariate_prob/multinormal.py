@@ -10,6 +10,10 @@ class MultiNormal:
         """constructor"""
 
         self.data = data
+        self.__mean = np.mean(data, axis=1, keepdims=True)
+        _, n = data.shape
+        data_centered = data - self.mean
+        self.__cov = (data_centered.T @ data_centered) / (n - 1)
 
     @property
     def data(self):
@@ -32,25 +36,12 @@ class MultiNormal:
 
         self.__data = value
 
-
     @property
     def cov(self):
         """get covariance matrix data"""
         return self.__cov
 
-    @cov.setter
-    def __cov(self, data, mean):
-        """calculate covariance"""
-        data_centered = data - mean
-        n = data.ndim[0]
-        return (data_centered.T @ data_centered) / (n - 1)
-
-
     @property
     def mean(self):
         """get mean for data"""
         return self.__mean
-
-    def __mean(self, data):
-        """calculate mean of data"""
-        return np.mean(data, axis=0, keepdims=True)
