@@ -25,7 +25,7 @@ class MultiNormal:
 
         if not isinstance(x, np.ndarray):
             raise TypeError(x_ter)
-        if x.shape[0] != self.__mn_dimentions and x.shape[1] != 1:
+        if x.shape != (self.__mn_dimentions, 1):
             raise ValueError(x_ver)
         return 
 
