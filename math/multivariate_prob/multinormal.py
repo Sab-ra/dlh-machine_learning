@@ -26,7 +26,8 @@ class MultiNormal:
 
         if not isinstance(value, np.ndarray) or value.ndim != 2:
             raise TypeError(d_ter)
-        if len(value.shape) < 2:
+        n, _ = value.shape
+        if n < 2:
             raise ValueError(d_ver)
 
         self.__data = value
