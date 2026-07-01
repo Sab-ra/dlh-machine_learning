@@ -13,7 +13,7 @@ class MultiNormal:
         self.__mean = np.mean(data, axis=1, keepdims=True)
         _, n = data.shape
         data_centered = data - self.mean
-        self.__cov = (data_centered.T @ data_centered) / (n - 1)
+        self.__cov = (data_centered @ data_centered.T) / (n - 1)
 
     @property
     def data(self):
