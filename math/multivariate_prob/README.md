@@ -27,6 +27,17 @@ Create the class MultiNormal that represents a Multivariate Normal distribution:
 - [x] If data is not a 2D numpy.ndarray, raise a TypeError with the message data must be a 2D numpy.ndarray
 - [x] If n is less than 2, raise a ValueError with the message data must contain multiple data points
 Set the public instance variables:
-- [ ] mean - a numpy.ndarray of shape (d, 1) containing the mean of data
-- [ ] cov - a numpy.ndarray of shape (d, d) containing the covariance matrix data
+- [x] mean - a numpy.ndarray of shape (d, 1) containing the mean of data
+- [x] cov - a numpy.ndarray of shape (d, d) containing the covariance matrix data
+You are not allowed to use the function numpy.cov
+
+3. PDF
+Update the class MultiNormal:
+
+- [x] public instance method def pdf(self, x): that calculates the PDF at a data point:
+- [x] x is a numpy.ndarray of shape (d, 1) containing the data point whose PDF should be calculated
+- [x] d is the number of dimensions of the Multinomial instance
+- [x] If x is not a numpy.ndarray, raise a TypeError with the message x must be a numpy.ndarray
+- [x] If x is not of shape (d, 1), raise a ValueError with the message x must have the shape ({d}, 1)
+- [ ] Returns the value of the PDF
 You are not allowed to use the function numpy.cov

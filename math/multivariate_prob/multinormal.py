@@ -11,9 +11,23 @@ class MultiNormal:
 
         self.data = data
         self.__mean = np.mean(data, axis=1, keepdims=True)
-        _, n = data.shape
+        d, n = data.shape
         data_centered = data - self.mean
         self.__cov = (data_centered @ data_centered.T) / (n - 1)
+        self.__mn_dimentions = d
+
+    def pdf(self, x):
+        """calculate PDF at datapoint"""
+
+        # error messages
+        x_ter = f'x must be a numpy.ndarray'
+        x_ver = f'x must have the shape ({self.__mn_dimentions}, 1)'
+
+        if not isinstance(x, np.ndarray):
+            raise TypeError(x_ter)
+        if x.shape[0] != self.__mn_dimentions and x.shape[1] != 1:
+            raise ValueError(x_ver)
+        return 
 
     @property
     def data(self):
