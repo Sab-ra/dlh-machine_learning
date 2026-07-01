@@ -27,7 +27,17 @@ class MultiNormal:
             raise TypeError(x_ter)
         if x.shape != (self.__mn_dimentions, 1):
             raise ValueError(x_ver)
-        return 
+
+        d, _ = x.shape
+        cov = self.cov
+        mean = self.mean
+        diff = x - mean
+        cov_det = np.linalg.det(cov)
+        cov_inv = np.linalg.inv(cov)
+        denom = np.sqrt((2 * np.pi) ** d * cov_det)
+        exponent = -0.5 * (diff.T @ cov_inv @ diff)
+        pdf_val = np.exp(exponent) / denom
+        return pdf_val[0, 0]
 
     @property
     def data(self):
