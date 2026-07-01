@@ -34,7 +34,7 @@ class MultiNormal:
         diff = x - mean
         cov_det = np.linalg.det(cov)
         cov_inv = np.linalg.inv(cov)
-        denom = np.sqrt((2 * np.pi) ** d * cov_det)
+        denom = (2 * np.pi) ** (d / 2) * np.sqrt(cov_det)
         exponent = -0.5 * (diff.T @ cov_inv @ diff)
         pdf_val = np.exp(exponent) / denom
         return pdf_val[0, 0]
