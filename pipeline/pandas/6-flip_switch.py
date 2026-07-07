@@ -3,6 +3,6 @@
 
 
 def flip_switch(df):
-    """Flips based on Timestamp"""
+    """Flips based on Timestamp and Transposes"""
 
-    return df.sort_values('Timestamp', ascending=True)
+    return df.sort_values('Timestamp', ascending=False).T
