@@ -60,3 +60,6 @@ Write a function `def flip_switch(df):` that takes a pd.DataFrame and:
 - [ ] Sorts the data in reverse chronological order.
 - [ ] Transposes the sorted dataframe (column Timestamp).
 - [ ] Returns: the transformed pd.DataFrame.
+
+## 7-high.py
+
