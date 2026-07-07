@@ -24,3 +24,6 @@ Write a function `def from_file(filename, delimiter):` that loads data from a fi
 - [ ]filename is the file to load from
 - [ ]delimiter is the column separator
 - [ ]Returns: the loaded pd.DataFrame
+
+## 3-rename.py
+
