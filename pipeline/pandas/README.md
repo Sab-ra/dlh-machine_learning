@@ -55,3 +55,8 @@ Write a function `def slice(df):` that takes a pd.DataFrame and:
 
 ## 6-flip_switch.py
 
+Write a function `def flip_switch(df):` that takes a pd.DataFrame and:
+
+- [ ] Sorts the data in reverse chronological order.
+- [ ] Transposes the sorted dataframe (column Timestamp).
+- [ ] Returns: the transformed pd.DataFrame.
