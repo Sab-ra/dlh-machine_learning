@@ -67,3 +67,5 @@ Write a function `def high(df):` that takes a pd.DataFrame and:
 
 - [ ] Sorts it by the High price in descending order.
 - [ ] Returns: the sorted pd.DataFrame.
+n\## 8-prune.py
+
