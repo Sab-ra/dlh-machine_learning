@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """DataFrame to ndarray"""
-import pandas as pd
 
 
 def array(df):
