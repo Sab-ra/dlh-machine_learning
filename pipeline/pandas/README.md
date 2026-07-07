@@ -16,5 +16,11 @@ Write a python **script** that creates a **pd.DataFrame from a dictionary**:
 - [x] The second column should be labeled Second and have the values one, two, three, four
 - [x] The rows should be labeled A, B, C, and D, respectively
 - [x] The pd.DataFrame should be saved into the variable df
+
 ## 2-from_file.py
 
+Write a function `def from_file(filename, delimiter):` that loads data from a file as a pd.DataFrame:
+
+- [ ]filename is the file to load from
+- [ ]delimiter is the column separator
+- [ ]Returns: the loaded pd.DataFrame
