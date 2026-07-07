@@ -29,11 +29,17 @@ Write a function `def from_file(filename, delimiter):` that loads data from a fi
 
 Write a function `def rename(df):` that takes a pd.DataFrame as input and performs the following:
 
-- [ ] df is a pd.DataFrame containing a column named Timestamp.
-- [ ] The function should rename the Timestamp column to Datetime.
-- [ ] Convert the timestamp values to datetime values
-- [ ] Display only the Datetime and Close column
-- [ ] Returns: the modified pd.DataFrame
+- [x] df is a pd.DataFrame containing a column named Timestamp.
+- [x] The function should rename the Timestamp column to Datetime.
+- [x] Convert the timestamp values to datetime values
+- [x] Display only the Datetime and Close column
+- [x] Returns: the modified pd.DataFrame
 
 ## 4-array.py
 
+Write a function `def array(df):` that takes a pd.DataFrame as input and performs the following:
+
+- [ ] df is a pd.DataFrame containing columns named High and Close.
+- [ ] The function should select the last 10 rows of the High and Close columns.
+- [ ] Convert these selected values into a numpy.ndarray.
+- [ ] Returns: the numpy.ndarray
