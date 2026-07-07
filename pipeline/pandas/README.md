@@ -52,3 +52,6 @@ Write a function `def slice(df):` that takes a pd.DataFrame and:
 - [ ] Extracts the columns High, Low, Close, and Volume_(BTC).
 - [ ] Selects every 60th row from these columns.
 - [ ] Returns: the sliced pd.DataFrame
+
+## 6-flip_switch.py
+
