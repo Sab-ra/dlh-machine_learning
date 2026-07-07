@@ -57,9 +57,13 @@ Write a function `def slice(df):` that takes a pd.DataFrame and:
 
 Write a function `def flip_switch(df):` that takes a pd.DataFrame and:
 
-- [ ] Sorts the data in reverse chronological order.
-- [ ] Transposes the sorted dataframe (column Timestamp).
-- [ ] Returns: the transformed pd.DataFrame.
+- [x] Sorts the data in reverse chronological order.
+- [x] Transposes the sorted dataframe (column Timestamp).
+- [x] Returns: the transformed pd.DataFrame.
 
 ## 7-high.py
 
+Write a function `def high(df):` that takes a pd.DataFrame and:
+
+- [ ] Sorts it by the High price in descending order.
+- [ ] Returns: the sorted pd.DataFrame.
