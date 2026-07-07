@@ -21,9 +21,16 @@ Write a python **script** that creates a **pd.DataFrame from a dictionary**:
 
 Write a function `def from_file(filename, delimiter):` that loads data from a file as a pd.DataFrame:
 
-- [ ]filename is the file to load from
-- [ ]delimiter is the column separator
-- [ ]Returns: the loaded pd.DataFrame
+- [x]filename is the file to load from
+- [x]delimiter is the column separator
+- [x]Returns: the loaded pd.DataFrame
 
 ## 3-rename.py
 
+Write a function `def rename(df):` that takes a pd.DataFrame as input and performs the following:
+
+- [ ] df is a pd.DataFrame containing a column named Timestamp.
+- [ ] The function should rename the Timestamp column to Datetime.
+- [ ] Convert the timestamp values to datetime values
+- [ ] Display only the Datetime and Close column
+- [ ] Returns: the modified pd.DataFrame
