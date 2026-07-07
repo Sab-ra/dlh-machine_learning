@@ -65,7 +65,12 @@ Write a function `def flip_switch(df):` that takes a pd.DataFrame and:
 
 Write a function `def high(df):` that takes a pd.DataFrame and:
 
-- [ ] Sorts it by the High price in descending order.
-- [ ] Returns: the sorted pd.DataFrame.
-n\## 8-prune.py
+- [x] Sorts it by the High price in descending order.
+- [x] Returns: the sorted pd.DataFrame.
 
+## 8-prune.py
+
+Write a function `def prune(df):` that takes a pd.DataFrame and:
+
+- [ ] Removes any entries where Close has NaN values.
+- [ ] Returns: the modified pd.DataFrame.
