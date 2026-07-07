@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Create Data Frame from ND-Array"""
-import numpy as np
+#import numpy as np
 import pandas as pd
 
 
