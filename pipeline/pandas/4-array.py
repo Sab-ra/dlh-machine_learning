@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""DataFrame to ndarray"""
+"""Requires call from module that has
+numpy and pandas"""
 
 
 def array(df):

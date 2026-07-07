@@ -39,7 +39,8 @@ Write a function `def rename(df):` that takes a pd.DataFrame as input and perfor
 
 Write a function `def array(df):` that takes a pd.DataFrame as input and performs the following:
 
-- [ ] df is a pd.DataFrame containing columns named High and Close.
-- [ ] The function should select the last 10 rows of the High and Close columns.
-- [ ] Convert these selected values into a numpy.ndarray.
-- [ ] Returns: the numpy.ndarray
+- [x] df is a pd.DataFrame containing columns named High and Close.
+- [x] The function should select the last 10 rows of the High and Close columns.
+- [x] Convert these selected values into a numpy.ndarray.
+- [x] Returns: the numpy.ndarray
+- [x] The function will be called from modules that already have pandas and numpy, so no need to import
