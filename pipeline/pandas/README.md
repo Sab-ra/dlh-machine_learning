@@ -34,3 +34,6 @@ Write a function `def rename(df):` that takes a pd.DataFrame as input and perfor
 - [ ] Convert the timestamp values to datetime values
 - [ ] Display only the Datetime and Close column
 - [ ] Returns: the modified pd.DataFrame
+
+## 4-array.py
+
