@@ -44,3 +44,11 @@ Write a function `def array(df):` that takes a pd.DataFrame as input and perform
 - [x] Convert these selected values into a numpy.ndarray.
 - [x] Returns: the numpy.ndarray
 - [x] The function will be called from modules that already have pandas and numpy, so no need to import
+
+## 5-slice.py
+
+Write a function `def slice(df):` that takes a pd.DataFrame and:
+
+- [ ] Extracts the columns High, Low, Close, and Volume_(BTC).
+- [ ] Selects every 60th row from these columns.
+- [ ] Returns: the sliced pd.DataFrame
