@@ -5,4 +5,4 @@
 def prune(df):
     """Del rows where Close is NaN"""
 
-    return df.dropna(subset=Close)
+    return df.dropna(subset=['Close'])
