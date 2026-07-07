@@ -5,4 +5,4 @@
 def flip_switch(df):
     """Flips based on Timestamp"""
 
-    return df.sort_values('Timestamp', ascending=False)
+    return df.sort_values('Timestamp', ascending=True)
