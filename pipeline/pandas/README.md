@@ -98,3 +98,6 @@ Write a function `def index(df):` that takes a pd.DataFrame and:
 
 ## 11-concat.py
 
+
+## 12-hierarchy.py
+
