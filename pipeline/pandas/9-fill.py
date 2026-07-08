@@ -13,4 +13,5 @@ def fill(df):
     df['Open'] = df['Open'].fillna(df['Close'])
     df['High'] = df['High'].fillna(df['Close'])
     df['Low'] = df['Low'].fillna(df['Close'])
-    
+
+    return df
