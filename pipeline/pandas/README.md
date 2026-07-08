@@ -111,12 +111,16 @@ Write a function `def concat(df1, df2):` that takes two pd.DataFrame objects and
 
 Based on [11-concat.py], write a function `def hierarchy(df1, df2):` that takes two pd.DataFrame objects and:
 
-- [ ] Rearranges the MultiIndex so that Timestamp is the first level.
-- [ ] Concatenates the bitstamp and coinbase tables from timestamps 1417411980 to 1417417980, inclusive.
-- [ ] Adds keys to the data, labeling rows from df2 as bitstamp and rows from df1 as coinbase.
-- [ ] Ensures the data is displayed in chronological order.
-- [ ] You should use index = __import__('10-index').index.
-- [ ] Returns: the concatenated pd.DataFrame.
+- [x] Rearranges the MultiIndex so that Timestamp is the first level.
+- [x] Concatenates the bitstamp and coinbase tables from timestamps 1417411980 to 1417417980, inclusive.
+- [x] Adds keys to the data, labeling rows from df2 as bitstamp and rows from df1 as coinbase.
+- [x] Ensures the data is displayed in chronological order.
+- [x] You should use index = __import__('10-index').index.
+- [x] Returns: the concatenated pd.DataFrame.
 
 ## 13-analyze.py
 
+Write a function `def analyze(df):` that takes a pd.DataFrame and:
+
+- [ ] Computes descriptive statistics for all columns except the Timestamp column.
+- [ ] Returns a new pd.DataFrame containing these statistics.
