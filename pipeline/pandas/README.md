@@ -135,13 +135,13 @@ Complete the following script to visualize the pd.DataFrame:
 
 - [x] Convert the timestamp values to date values
 
-- [ ] Index the data frame on Date
+- [x] Index the data frame on Date
 
-- [ ] Missing values in Close should be set to the previous row value
+- [x] Missing values in Close should be set to the previous row value
 
-- [ ] Missing values in High, Low, Open should be set to the same row's Close value
+- [x] Missing values in High, Low, Open should be set to the same row's Close value
 
-- [ ] Missing values in Volume_(BTC) and Volume_(Currency) should be set to 0
+- [x] Missing values in Volume_(BTC) and Volume_(Currency) should be set to 0
 
 - [ ] Plot the data from 2017 and beyond at daily intervals and group the values of the same day such that:
 
