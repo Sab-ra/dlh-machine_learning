@@ -27,4 +27,4 @@ htmlcov/
 # Datasets from school
 *.npz
 *.npy
-*/pipeline/datasets/*.csv
+pipeline/datasets/*.csv

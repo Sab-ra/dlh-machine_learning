@@ -83,8 +83,15 @@ Write a function `def prune(df):` that takes a pd.DataFrame and:
 
 Write a function `def fill(df):` that takes a pd.DataFrame and:
 
-- [ ] Removes the Weighted_Price column.
-- [ ] Fills missing values in the Close column with the previous row’s value.
-- [ ] Fills missing values in the High, Low, and Open columns with the corresponding Close value in the same row.
-- [ ] Sets missing values in Volume_(BTC) and Volume_(Currency) to 0.
-- [ ] Returns: the modified pd.DataFrame.
+- [x] Removes the Weighted_Price column.
+- [x] Fills missing values in the Close column with the previous row’s value.
+- [x] Fills missing values in the High, Low, and Open columns with the corresponding Close value in the same row.
+- [x] Sets missing values in Volume_(BTC) and Volume_(Currency) to 0.
+- [x] Returns: the modified pd.DataFrame.
+
+## 10-index.py
+
+Write a function `def index(df):` that takes a pd.DataFrame and:
+
+- [x] Sets the Timestamp column as the index of the dataframe.
+- [x] Returns: the modified pd.DataFrame.
