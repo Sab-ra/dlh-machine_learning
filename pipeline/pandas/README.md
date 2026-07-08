@@ -117,3 +117,6 @@ Based on [11-concat.py], write a function `def hierarchy(df1, df2):` that takes 
 - [ ] Ensures the data is displayed in chronological order.
 - [ ] You should use index = __import__('10-index').index.
 - [ ] Returns: the concatenated pd.DataFrame.
+
+## 13-analyze.py
+
