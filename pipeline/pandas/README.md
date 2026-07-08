@@ -74,3 +74,6 @@ Write a function `def prune(df):` that takes a pd.DataFrame and:
 
 - [ ] Removes any entries where Close has NaN values.
 - [ ] Returns: the modified pd.DataFrame.
+
+## 9-fill.py
+
