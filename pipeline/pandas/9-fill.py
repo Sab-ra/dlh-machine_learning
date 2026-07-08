@@ -9,6 +9,6 @@ def fill(df):
     """
 
     df = df.drop(['Weighted_Price'], axis=1)
-    df.Close = df.Close.ffill()
-    df.Open = df.Open.fillna = df.Close
+    df['Close'] = df['Close'].ffill()
+    # df.Open = df.Open.fillna = df.Close
     
