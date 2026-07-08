@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Concatenate 2 DF's"""
+import pandas as pd
 
 
 def concat(df1, df2):
