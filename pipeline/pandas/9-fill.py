@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fill missing data in coin_df"""
-import pandas as pd
+
 
 def fill(df):
     """
