@@ -98,6 +98,22 @@ Write a function `def index(df):` that takes a pd.DataFrame and:
 
 ## 11-concat.py
 
+Write a function `def concat(df1, df2):` that takes two pd.DataFrame objects and:
+
+- [x] Indexes both dataframes on their Timestamp columns.
+- [x] Includes all timestamps from df2 (bitstamp) up to and including timestamp 1417411920.
+- [x] Concatenates the selected rows from df2 to the top of df1 (coinbase).
+- [x] Adds keys to the concatenated data, labeling the rows from df2 as bitstamp and the rows from df1 as coinbase.
+- [x] You should use `index = __import__('10-index').index`
+- [x] Returns the concatenated pd.DataFrame.
 
 ## 12-hierarchy.py
 
+Based on [11-concat.py], write a function `def hierarchy(df1, df2):` that takes two pd.DataFrame objects and:
+
+- [ ] Rearranges the MultiIndex so that Timestamp is the first level.
+- [ ] Concatenates the bitstamp and coinbase tables from timestamps 1417411980 to 1417417980, inclusive.
+- [ ] Adds keys to the data, labeling rows from df2 as bitstamp and rows from df1 as coinbase.
+- [ ] Ensures the data is displayed in chronological order.
+- [ ] You should use index = __import__('10-index').index.
+- [ ] Returns: the concatenated pd.DataFrame.
