@@ -8,7 +8,7 @@ def fill(df):
     - [x] Fill NaN's
     """
 
-    df = df.drop('Weighted_Price', axis=1)
+    df = df.drop(['Weighted_Price'], axis=1)
     df.Close = df.Close.ffill()
     df.Open = df.Open.fillna = df.Close
     
