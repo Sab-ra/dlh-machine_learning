@@ -5,4 +5,4 @@
 def analyze(df):
     """Use describe"""
 
-    return df.iloc([1:], axis=1).describe()
+    return df.iloc[:, 1:].describe()
