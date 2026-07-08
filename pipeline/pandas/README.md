@@ -1,5 +1,9 @@
 # Pandas
 
+## Training Datasets
+
+Training datasets located: '../datasets'
+
 ## 0-from_numpy.py
 
 Write a function `def from_numpy(array):` that creates a **pd.DataFrame** from a np.ndarray:
@@ -72,8 +76,15 @@ Write a function `def high(df):` that takes a pd.DataFrame and:
 
 Write a function `def prune(df):` that takes a pd.DataFrame and:
 
-- [ ] Removes any entries where Close has NaN values.
-- [ ] Returns: the modified pd.DataFrame.
+- [x] Removes any entries where Close has NaN values.
+- [x] Returns: the modified pd.DataFrame.
 
 ## 9-fill.py
 
+Write a function `def fill(df):` that takes a pd.DataFrame and:
+
+- [ ] Removes the Weighted_Price column.
+- [ ] Fills missing values in the Close column with the previous row’s value.
+- [ ] Fills missing values in the High, Low, and Open columns with the corresponding Close value in the same row.
+- [ ] Sets missing values in Volume_(BTC) and Volume_(Currency) to 0.
+- [ ] Returns: the modified pd.DataFrame.
