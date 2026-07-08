@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Concatenate 2 DF's and sort"""
+import pandas as pd
 
 
 def hierarchy(df1, df2):
