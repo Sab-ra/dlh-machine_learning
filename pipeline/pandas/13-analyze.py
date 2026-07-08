@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Descriptive stats"""
-import pandas as pd
 
 
 def analyze(df):
