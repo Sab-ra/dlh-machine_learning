@@ -143,16 +143,16 @@ Complete the following script to visualize the pd.DataFrame:
 
 - [x] Missing values in Volume_(BTC) and Volume_(Currency) should be set to 0
 
-- [ ] Plot the data from 2017 and beyond at daily intervals and group the values of the same day such that:
+- [x] Plot the data from 2017 and beyond at daily intervals and group the values of the same day such that:
 
-    - [ ] High: max
-    - [ ] Low: min
-    - [ ] Open: mean
-    - [ ] Close: mean
-    - [ ] Volume(BTC): sum
-    - [ ] Volume(Currency): sum
+    - [x] High: max
+    - [x] Low: min
+    - [x] Open: mean
+    - [x] Close: mean
+    - [x] Volume(BTC): sum
+    - [x] Volume(Currency): sum
 
-- [ ] Return the transformed pd.DataFrame before plotting.
+- [x] Return the transformed pd.DataFrame before plotting.
 
 ```python3
 #!/usr/bin/env python3

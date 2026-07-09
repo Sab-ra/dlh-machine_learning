@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+Module demonstrates the workflow,
+From: raw data
+To: plotting
+"""
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -32,10 +37,11 @@ agg_rules = {
     'Volume_(BTC)': 'sum',
     'Volume_(Currency)': 'sum'
 }
+
+## RETURN transformed pd.DataFrame ready to be plotted data
 df_daily = df17.resample('D').agg(agg_rules)
 
 ## Plot on Two Subplots sharing the X-axis
-
 fig, (ax1, ax2) = plt.subplots(2, 1, 
                                sharex=True,
                                figsize=(10,8))
@@ -50,4 +56,3 @@ ax2.set_title('Coinbase Daily Volume')
 
 plt.tight_layout()
 plt.show()
-
