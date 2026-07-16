@@ -1,47 +1,47 @@
 #!/usr/bin/env python3
 """
-Finde GitHub User Locations
+Fetch and print a GitHub user's location from a given API URL.
 """
-import requests
 import sys
 import time
+
+import requests
 
 
 def get_github_user_location(api_url):
     """
-    Fetches location from GitHub API
+    Fetch the user location from the GitHub API and print expected output.
     """
-
     try:
-        r = requests.get(api_url)
+        response = requests.get(api_url, timeout=10)
 
-        if r.status_code == 200:
-            user_data = r.json()
-            location = user_data.get('location')
+        if response.status_code == 200:
+            user_data = response.json()
+            location = user_data.get("location")
             if location:
                 print(location)
             else:
-                print('Not found')  # User and no location
-        elif r.status_code == 404:
-            print('Not found')
-        elif r.status_code == 403:
-            # Rate limit exeeded
-            reset_timestamp = int(
-                r.headers.get('X-Ratelimit-Reset', 0)
-            )
+                print("Not found")
+        elif response.status_code == 404:
+            print("Not found")
+        elif response.status_code == 403:
+            reset_raw = response.headers.get("X-RateLimit-Reset", "0")
+            reset_timestamp = int(reset_raw) if reset_raw.isdigit() else 0
             if reset_timestamp > 0:
                 current_timestamp = int(time.time())
-                # Calculate minutes from now
-                minutes_to_reset = (
-                    (reset_timestamp - current_timestamp) // 60
-                )
+                minutes_to_reset = (reset_timestamp - current_timestamp) // 60
                 if minutes_to_reset < 0:
                     minutes_to_reset = 0
-                print(f'Reset in {minutes_to_reset} min')
+                print(f"Reset in {minutes_to_reset} min")
             else:
-                print('Rate limit exceeded, X-Ratelimit-Reset header not found.')
+                print("Reset in 0 min")
         else:
-            print(f"Error: Unexpected status code {r.status_code}")
+            print("Not found")
+    except requests.exceptions.RequestException:
+        print("Not found")
 
-    except requests.exceptions.RequestException as e:
-        print(f'An error occured during the request: {e}')
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        sys.exit(1)
+    get_github_user_location(sys.argv[1])
