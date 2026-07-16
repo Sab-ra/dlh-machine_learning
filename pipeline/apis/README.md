@@ -18,3 +18,9 @@ By using the Swapi API, create a method that returns the list of names of the ho
 
 ## 2-user_location.py
 
+By using the GitHub API, write a script that prints the location of a specific user:
+
+- [x] The user is passed as first argument of the script with the full API URL, example: ./2-user_location.py https://api.github.com/users/holbertonschool
+- [x] If the user doesn't exist, print Not found
+- [x] If the status code is 403, print Reset in X min where X is the number of minutes from now and the value of X-Ratelimit-Reset
+- [x] Your code should not be executed when the file is imported (you should use if __name__ == '__main__':)
