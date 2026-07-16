@@ -7,3 +7,6 @@ By using the Swapi API, create a method that returns the list of ships that can 
 - [x] Prototype: `def availableShips(passengerCount)`
 - [x] Don't forget the pagination
 - [x] If no ship available, return an empty list.
+
+## 1-sentience.py
+
