@@ -26,3 +26,6 @@ By using the GitHub API, write a script that prints the location of a specific u
 - [x] Your code should not be executed when the file is imported (you should use if __name__ == '__main__':)
 
 _Tips: Playing with an API that has a Rate limit is challenging, mainly because you don't have the control on when the quota will be reset - we really encourage you to analyze the API a much as you can before coding and be able to "mock the API response"_
+
+## 3-first_launch.py
+
