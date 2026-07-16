@@ -11,7 +11,7 @@ def sentientPlanets():
     """
 
     api_url = 'https://swapi.dev/api/species/'
-    sentient_homeworld_urls = set() # unique values because set
+    sentient_homeworld_urls = set()     # unique values because set
     planet_names = set()
 
     # Fetch all homeworld URLs
@@ -44,7 +44,7 @@ def sentientPlanets():
         except requests.exceptions.RequestException as e:
             print(f'Error fetching species data: {e}')
             return []
-        
+
     # Fetch planet names
     for homeworld_url in sentient_homeworld_urls:
         try:
