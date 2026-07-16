@@ -46,3 +46,11 @@ Your code should not be executed when the file is imported (you should use if __
 
 ## 4-rocket_frequency.py
 
+By using the (unofficial) SpaceX API, write a script that displays the number of launches per rocket.
+
+- [ ] Use this https://api.spacexdata.com/v4/launches to make request
+- [ ] All launches should be taken into consideration
+- [ ] Each line should contain the rocket name and the number of launches separated by : (format below in the example)
+- [ ] Order the result by the number launches (descending)
+- [ ] If multiple rockets have the same amount of launches, order them by alphabetic order (A to Z)
+- [ ] Your code should not be executed when the file is imported (you should use if __name__ == '__main__':)
