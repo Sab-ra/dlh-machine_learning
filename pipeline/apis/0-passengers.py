@@ -35,14 +35,14 @@ def availableShips(passengerCount):
                         capacity = int(psgr_str)
                 except ValueError:
                     capacity = 0
-                
+
                 if capacity >= psgr_count:
                     suitable_ships.append(ship.get('name'))
-            
+
             current_url = data.get('next')
-        
+
         except requests.exceptions.RequestException as e:
             print(f'Error fetching data: {e}')
             return []
-    
+
     return suitable_ships
