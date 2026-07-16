@@ -65,6 +65,7 @@ def fetch_first_launch_name():
 
     return None
 
+
 def main():
     """
     Print the first name if found.
@@ -73,6 +74,7 @@ def main():
     launch_name = fetch_first_launch_name()
     if launch_name:
         print(launch_name)
+
 
 if __name__ == "__main__":
     main()
