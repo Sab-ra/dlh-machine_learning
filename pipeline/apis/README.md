@@ -15,3 +15,6 @@ By using the Swapi API, create a method that returns the list of names of the ho
 - [x] Prototype: `def sentientPlanets():
 - [x] Don't forget the pagination
 - [x] sentient type is either in the classification or designation attributes.
+
+## 2-user_location.py
+
