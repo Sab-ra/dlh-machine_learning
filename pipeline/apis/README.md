@@ -29,3 +29,17 @@ _Tips: Playing with an API that has a Rate limit is challenging, mainly because 
 
 ## 3-first_launch.py
 
+## 3. First launch
+
+By using the (unofficial) SpaceX API, write a script that displays the first launch with these information:
+
+- [x] Name of the launch
+- [x] The date (in local time)
+- [x] The rocket name
+- [x] The name (with the locality) of the launchpad
+
+Format: `<launch name> (<date>) <rocket name> - <launchpad name> (<launchpad locality>)`
+
+we encourage you to use the date_unix for sorting it - and if 2 launches have the same date, use the first one in the API result.
+
+Your code should not be executed when the file is imported (you should use if __name__ == '__main__':)
