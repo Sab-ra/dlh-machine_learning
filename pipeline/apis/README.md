@@ -10,3 +10,8 @@ By using the Swapi API, create a method that returns the list of ships that can 
 
 ## 1-sentience.py
 
+By using the Swapi API, create a method that returns the list of names of the home planets of all sentient species.
+
+- [x] Prototype: `def sentientPlanets():
+- [x] Don't forget the pagination
+- [x] sentient type is either in the classification or designation attributes.
